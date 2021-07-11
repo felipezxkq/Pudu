@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "938826633636",
+    "project_id": "foodimpact-7a717",
+    "storage_bucket": "foodimpact-7a717.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938826633636:android:1dc9507c8974764023b131",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938826633636-stfuscivu2e54hn2f29qcdodn1231vr3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "d5d76b191103f36bf08d03fa6f0a457fb32edec4"
+          }
+        },
+        {
+          "client_id": "938826633636-ikaa1eiqrcjbca4q849i4d9rr2s2jmcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrEdHyM9W3yOJPBYdlJG0ex4NBzX5RkKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938826633636-ikaa1eiqrcjbca4q849i4d9rr2s2jmcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
