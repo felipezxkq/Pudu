@@ -1,26 +1,32 @@
 package com.example.myapplication
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivitySearchBinding
+import com.example.myapplication.models.SearchModel
 import com.facebook.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.zxing.integration.android.IntentIntegrator
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
+import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity() {
 
-    var nombreProducto: String = "Empty"
-
     private var callbackManager:CallbackManager? = null
-
     private lateinit var binding:ActivitySearchBinding
+
+    private var searchList: List<SearchModel> = ArrayList()
+    private val searchListAdapter = SearchListAdapter(searchList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -38,13 +44,33 @@ class SearchActivity : AppCompatActivity() {
         }
         */
 
+        search_list.hasFixedSize()
+        search_list.layoutManager = LinearLayoutManager(this)
+        search_list.adapter = searchListAdapter
+
+        textSearch.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                val searchText: String = textSearch.text.toString()
+                searchInFirestore(searchText.lowercase())
+            }
+
+        })
+
+
 
         val shareBtn = findViewById<Button>(R.id.shareBtn)
         shareBtn.setOnClickListener {
 
             val intent = Intent()
             intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT, nombreProducto)
+            //intent.putExtra(Intent.EXTRA_TEXT, nombreProducto)
             intent.type = "text/plain"
 
             startActivity(Intent.createChooser(intent, "Please select app: "))
@@ -79,6 +105,21 @@ class SearchActivity : AppCompatActivity() {
         })
     }
 
+    private fun searchInFirestore(searchText: String) {
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Products").orderBy("product_name")
+            .startAt(searchText).endAt("$searchText\uf8ff").get().addOnCompleteListener{
+                if(it.isSuccessful){
+                    searchList = it.result!!.toObjects(SearchModel::class.java)
+                    searchListAdapter.searchList = searchList
+                    searchListAdapter.notifyDataSetChanged()
+                }else{
+                    Log.d(TAG, "Error: ${it.exception!!.message}")
+                }
+            }
+
+    }
+
     private fun initScanner(){
         val integrator = IntentIntegrator(this)
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
@@ -111,7 +152,6 @@ class SearchActivity : AppCompatActivity() {
         var query = productsRef.whereEqualTo("code", code).get()
             .addOnSuccessListener { documents ->
                 if(documents.first() != null){
-                    nombreProducto = ("${documents.first().data.getValue("product_name")}")
 
                     val product_data = documents.first()
                     val intent = Intent(this, ProductActivity::class.java)

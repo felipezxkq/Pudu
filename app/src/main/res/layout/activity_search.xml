@@ -14,10 +14,11 @@
 
         <EditText
             android:id="@+id/textSearch"
-            android:layout_width="190dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Search here"
+            android:textColorHint="@color/purple_700"
             android:tooltipText="Search here" />
 
         <Button
@@ -31,6 +32,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -38,7 +40,7 @@
         android:id="@+id/shareBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Share" />
+        android:text="@string/share" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
@@ -47,6 +49,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp" />
+
 
 </LinearLayout>
 
