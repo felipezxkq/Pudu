@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -12,7 +11,6 @@ import com.example.myapplication.databinding.ActivitySearchBinding
 import com.facebook.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.zxing.integration.android.IntentIntegrator
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
 
@@ -32,11 +30,13 @@ class SearchActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.btnScanner.setOnClickListener { initScanner() }
 
+        /*
         val addProductBtn = findViewById<Button>(R.id.addProductBtn)
         addProductBtn.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
+        */
 
 
         val shareBtn = findViewById<Button>(R.id.shareBtn)
@@ -106,23 +106,51 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun returnProducts(code: String){
-        val productText = findViewById<EditText>(R.id.editTextProduct)
         val db = FirebaseFirestore.getInstance()
         var productsRef = db.collection("Products");
         var query = productsRef.whereEqualTo("code", code).get()
             .addOnSuccessListener { documents ->
                 if(documents.first() != null){
-                    productText.setText("${documents.first().data.getValue("product_name")}")
                     nombreProducto = ("${documents.first().data.getValue("product_name")}")
+
+                    val product_data = documents.first()
+                    val intent = Intent(this, ProductActivity::class.java)
+                    if(product_data.contains("product_name")){
+                        intent.putExtra("product_name", product_data.getString("product_name"))
+                    }
+                    if(product_data.contains("serving_size")){
+                        intent.putExtra("serving_size", product_data.getString("serving_size"))
+                    }
+                    if(product_data.contains("ingredients_text")){
+                        intent.putExtra("ingredients_text", product_data.getString("ingredients_text"))
+                    }
+                    if(product_data.contains("energy-kcal_100g")){
+                        intent.putExtra("energy-kcal_100g", product_data.getString("energy-kcal_100g"))
+                    }
+                    if(product_data.contains("fat_100g")){
+                        intent.putExtra("fat_100g", product_data.getString("fat_100g"))
+                    }
+                    if(product_data.contains("proteins_100g")){
+                        intent.putExtra("proteins_100g", product_data.getString("proteins_100g"))
+                    }
+                    if(product_data.contains("sugars_100g")){
+                        intent.putExtra("sugars_100g", product_data.getString("sugars_100g"))
+                    }
+                    if(product_data.contains("sodium_100g")){
+                        intent.putExtra("sodium_100g", product_data.getString("sodium_100g"))
+                    }
+                    if(product_data.contains("caffeine_100g")){
+                        intent.putExtra("caffeine_100g", product_data.getString("caffeine_100g"))
+                    }
+                    startActivity(intent)
 
                 }
                 else{
-                    productText.setText("Producto no encontrado!")
                 }
 
             }
             .addOnFailureListener { exception ->
-                productText.setText("Error conexión")
             }
     }
+
 }
