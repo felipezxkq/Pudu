@@ -18,13 +18,15 @@ import com.facebook.login.widget.LoginButton
 
 class SearchActivity : AppCompatActivity() {
 
-    var nombreProducto: String = "Vacio"
+    var nombreProducto: String = "Empty"
 
     private var callbackManager:CallbackManager? = null
 
     private lateinit var binding:ActivitySearchBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
