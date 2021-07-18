@@ -29,32 +29,17 @@ class SearchListAdapter (var searchList: List<SearchModel>): RecyclerView.Adapte
 
                         val product_data = documents.first()
                         val intent = Intent(itemView.context, ProductActivity::class.java)
-                        if(product_data.contains("product_name")){
-                            intent.putExtra("product_name", product_data.getString("product_name"))
-                        }
-                        if(product_data.contains("serving_size")){
-                            intent.putExtra("serving_size", product_data.getString("serving_size"))
-                        }
-                        if(product_data.contains("ingredients_text")){
-                            intent.putExtra("ingredients_text", product_data.getString("ingredients_text"))
-                        }
-                        if(product_data.contains("energy-kcal_100g")){
-                            intent.putExtra("energy-kcal_100g", product_data.getString("energy-kcal_100g"))
-                        }
-                        if(product_data.contains("fat_100g")){
-                            intent.putExtra("fat_100g", product_data.getString("fat_100g"))
-                        }
-                        if(product_data.contains("proteins_100g")){
-                            intent.putExtra("proteins_100g", product_data.getString("proteins_100g"))
-                        }
-                        if(product_data.contains("sugars_100g")){
-                            intent.putExtra("sugars_100g", product_data.getString("sugars_100g"))
-                        }
-                        if(product_data.contains("sodium_100g")){
-                            intent.putExtra("sodium_100g", product_data.getString("sodium_100g"))
-                        }
-                        if(product_data.contains("caffeine_100g")){
-                            intent.putExtra("caffeine_100g", product_data.getString("caffeine_100g"))
+                        val list = listOf("product_name", "serving_size", "ingredients_text", "energy-kcal_100g", "fat_100g", "proteins_100g", "sugar_100g",
+                            "carbohydrates_100g", "traces", "packaging", "packaging_tags", "vitamin_c_100g", "alcohol_100g", "vitamin-a_100g", "vitamin-d_100g",
+                            "vitamin-k_100g", "vitamin-b1_100g", "vitamin-b2_100g", "vitamin-pp_100g", "vitamin-b6_100g", "vitamin-b9_100g", "vitamin-b12_100g",
+                            "biotin_100g", "pantothenic_acid_100g", "potassium_100g", "calcium_100g", "phosphorus_100g", "iron_100g", "magnesium_100g", "zinc_100g",
+                            "copper_100g", "manganese_100g", "selenium_100g", "chromium_100g", "molybdenum_100g", "iodine_100g",
+                            "sodium_100g", "caffeine_100g", "nova_group", "additives_n", "ingredients_from_palm_oil_n", "nutriscore_score", "nutriscore_grade",
+                        "allergens", "allergens_tags", "main_category")
+                        for (item in list){
+                            if(product_data.contains(item)){
+                                intent.putExtra(item, product_data.getString(item))
+                            }
                         }
                         itemView.context.startActivity(intent)
 

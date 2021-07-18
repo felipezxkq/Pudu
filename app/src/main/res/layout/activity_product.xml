@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:scrollbars="vertical"
     tools:context=".ProductActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -58,6 +62,7 @@
         >
     </EditText>
     <LinearLayout
+        android:id="@+id/nutritional_info"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,6 +116,7 @@
         android:layout_marginTop="10dp"
         >
     </EditText>
+
     <EditText
         android:id="@+id/textIngredientsList"
         android:layout_width="wrap_content"
@@ -121,5 +127,44 @@
         >
     </EditText>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Health and environment"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+    </EditText>
+
+    <EditText
+        android:id="@+id/novaGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Level of processing (Nova score): "
+        android:layout_marginTop="2dp"
+        >
+    </EditText>
+    <EditText
+        android:id="@+id/nutraScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Nutriscore: "
+        android:layout_marginTop="2dp"
+        >
+    </EditText>
+    <EditText
+        android:id="@+id/carbonFootprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Average carbon footprint for this type of product: "
+        android:layout_marginTop="2dp"
+        >
+    </EditText>
 
 </LinearLayout>
+</ScrollView>

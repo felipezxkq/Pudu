@@ -3,10 +3,12 @@ package com.pudu.pudu2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import androidx.appcompat.widget.Toolbar
+import kotlinx.android.synthetic.main.activity_product.*
 
 
 class ProductActivity : AppCompatActivity() {
@@ -18,6 +20,7 @@ class ProductActivity : AppCompatActivity() {
     private lateinit var fatText: EditText
     private lateinit var ingredientsListText: EditText
     var toolbar: Toolbar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
@@ -37,6 +40,8 @@ class ProductActivity : AppCompatActivity() {
         caloriesText = findViewById<EditText>(R.id.textCalories)
         if(intent.getStringExtra("energy-kcal_100g") != null){
             caloriesText.setText("Calories: "+intent.getStringExtra("energy-kcal_100g") + "kcal")
+        }else{
+
         }
 
         proteinText = findViewById<EditText>(R.id.textProtein)
@@ -57,6 +62,16 @@ class ProductActivity : AppCompatActivity() {
         ingredientsListText = findViewById<EditText>(R.id.textIngredientsList)
         if(intent.getStringExtra("ingredients_text")!= null){
             ingredientsListText.setText(intent.getStringExtra("ingredients_text"))
+        }
+
+        val inflater:LayoutInflater = layoutInflater
+        //inflater.inflate(R.layout.te, nutritional_info)
+        val list = listOf( listOf("Processing level: ", intent.getStringExtra("nova_group"), ""),
+            listOf("Vitamin A: ", intent.getStringExtra("vitamin-a_100g"), "g"))
+        for(element in list){
+            if(intent.getStringExtra(element[0])!=null){
+
+            }
         }
 
     }
