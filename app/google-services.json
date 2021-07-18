@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:938826633636:android:1dc9507c8974764023b131",
         "android_client_info": {
-          "package_name": "com.example.myapplication"
+          "package_name": "com.pudu.pudu2"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "938826633636-stfuscivu2e54hn2f29qcdodn1231vr3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.myapplication",
+            "package_name": "com.pudu.pudu2",
             "certificate_hash": "d5d76b191103f36bf08d03fa6f0a457fb32edec4"
           }
         },

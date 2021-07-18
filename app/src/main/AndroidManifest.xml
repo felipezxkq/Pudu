@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myapplication">
+    package="com.pudu.pudu2">
 
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
@@ -18,9 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".ShareActivity"></activity>
-        <activity android:name=".ProductActivity" />
-        <activity android:name=".view.SplashActivity">
+        <activity android:name="com.pudu.pudu2.ShareActivity"></activity>
+        <activity android:name="com.pudu.pudu2.ProductActivity" />
+        <activity android:name="com.pudu.pudu2.view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,9 +28,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".SearchActivity" />
-        <activity android:name=".SearchActivity" />
+            android:name="com.pudu.pudu2.MainActivity"
+            android:parentActivityName="com.pudu.pudu2.SearchActivity" />
+        <activity android:name="com.pudu.pudu2.SearchActivity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
