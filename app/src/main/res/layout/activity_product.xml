@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".ProductActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:titleTextColor="@color/design_default_color_on_primary" />
+
     <EditText xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/textProductName"
         android:layout_width="wrap_content"

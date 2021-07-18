@@ -17,13 +17,14 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun startTimer(){
-        object: CountDownTimer(3000, 1000) {
+        object: CountDownTimer(2000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
 
             }
             override fun onFinish() {
                 val intent = Intent(applicationContext, SearchActivity::class.java).apply {}
                 startActivity(intent)
+                finish()
             }
         }.start()
     }

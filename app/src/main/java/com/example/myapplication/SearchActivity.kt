@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivitySearchBinding
 import com.example.myapplication.models.SearchModel
@@ -20,6 +21,7 @@ import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
 import kotlinx.android.synthetic.main.activity_search.*
 
+
 class SearchActivity : AppCompatActivity() {
 
     private var callbackManager:CallbackManager? = null
@@ -27,11 +29,14 @@ class SearchActivity : AppCompatActivity() {
 
     private var searchList: List<SearchModel> = ArrayList()
     private val searchListAdapter = SearchListAdapter(searchList)
+    var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
         super.onCreate(savedInstanceState)
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.title = "Pudu"
+        setSupportActionBar(toolbar)
+
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnScanner.setOnClickListener { initScanner() }
@@ -64,7 +69,7 @@ class SearchActivity : AppCompatActivity() {
         })
 
 
-
+/*
         val shareBtn = findViewById<Button>(R.id.shareBtn)
         shareBtn.setOnClickListener {
 
@@ -75,7 +80,7 @@ class SearchActivity : AppCompatActivity() {
 
             startActivity(Intent.createChooser(intent, "Please select app: "))
         }
-
+*/
 
         callbackManager = CallbackManager.Factory.create();
 

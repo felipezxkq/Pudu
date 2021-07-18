@@ -1,8 +1,14 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.EditText
+import androidx.appcompat.widget.Toolbar
+
 
 class ProductActivity : AppCompatActivity() {
     private lateinit var productNameText: EditText
@@ -12,9 +18,16 @@ class ProductActivity : AppCompatActivity() {
     private lateinit var caffeineText: EditText
     private lateinit var fatText: EditText
     private lateinit var ingredientsListText: EditText
+    var toolbar: Toolbar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.title = "Pudu"
+        setSupportActionBar(toolbar)
+
+
 
         productNameText = findViewById<EditText>(R.id.textProductName)
         productNameText.setText(intent.getStringExtra("product_name"))
@@ -37,4 +50,23 @@ class ProductActivity : AppCompatActivity() {
         ingredientsListText = findViewById<EditText>(R.id.textIngredientsList)
         ingredientsListText.setText(intent.getStringExtra("ingredients_text"))
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item?.itemId){
+            R.id.share->{
+                val intent = Intent(applicationContext, ShareActivity::class.java).apply {}
+                startActivity(intent)
+            }
+
+
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
