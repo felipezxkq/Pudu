@@ -7,5 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="puduGreen">#013901</color>
+    <color name="puduDarkGreen">#01595a</color>
+    <color name="puduLightGreen">#1a7e62</color>
+    <color name="puduYellow">#f4931e</color>
 </resources>
