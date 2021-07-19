@@ -53,4 +53,5 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.42.0'
 
+
 }
