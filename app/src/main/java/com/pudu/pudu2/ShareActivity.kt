@@ -25,6 +25,7 @@ import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
+import com.facebook.share.Share
 import com.facebook.share.internal.ShareDialogFeature
 import com.facebook.share.model.*
 import com.facebook.share.widget.ShareButton
@@ -61,6 +62,7 @@ class ShareActivity : AppCompatActivity() {
 
 
             var hashtag = ShareHashtag.Builder().setHashtag("#Pudu").build()
+
 
             var sharecontent = ShareLinkContent.Builder()
                 .setContentUrl(Uri.parse("https://es.wikipedia.org/wiki/Pudu"))
@@ -152,8 +154,6 @@ class ShareActivity : AppCompatActivity() {
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, urlFoto)
             }
 
-
-
             startActivityForResult(intent, SOLICITUD_TOMAR_FOTO)
         }
     }
@@ -185,12 +185,7 @@ class ShareActivity : AppCompatActivity() {
                     //canceló la captura
                 }
             }
-
         }
-
-
-
-
     }
 
     fun crearArchivoImagen(): File{
@@ -213,5 +208,4 @@ class ShareActivity : AppCompatActivity() {
             sendBroadcast(mediaScanIntent)
         }
     }
-
 }

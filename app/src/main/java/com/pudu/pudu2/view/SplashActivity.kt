@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import com.pudu.pudu2.LoginActivity
 import com.pudu.pudu2.R
 import com.pudu.pudu2.SearchActivity
 
@@ -22,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
 
             }
             override fun onFinish() {
-                val intent = Intent(applicationContext, SearchActivity::class.java).apply {}
+                val intent = Intent(applicationContext, LoginActivity::class.java).apply {}
                 startActivity(intent)
                 finish()
             }
