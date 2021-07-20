@@ -19,6 +19,18 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginResult
+import com.facebook.login.widget.LoginButton
+import com.facebook.share.internal.ShareDialogFeature
+import com.facebook.share.model.*
+import com.facebook.share.widget.ShareButton
+import com.facebook.share.widget.ShareDialog
+import kotlinx.android.synthetic.main.activity_share.*
+import kotlinx.android.synthetic.main.activity_share.view.*
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -32,12 +44,37 @@ class ShareActivity : AppCompatActivity() {
     val permisoReadStorage = android.Manifest.permission.READ_EXTERNAL_STORAGE
 
     var ivFoto:ImageView? = null
+
     var urlFotoActual = ""
+
+
+    private var callbackManager: CallbackManager? = null
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_share)
+
+
+        btnShare.setOnClickListener{
+
+
+            var hashtag = ShareHashtag.Builder().setHashtag("#Pudu").build()
+
+            var sharecontent = ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://es.wikipedia.org/wiki/Pudu"))
+                .setQuote("Pudus are in danger.")
+                .setShareHashtag(hashtag)
+                .build();
+            ShareDialog.show(this@ShareActivity, sharecontent)
+        }
+
+
+
+        callbackManager = CallbackManager.Factory.create();
+        val loginButton = findViewById<LoginButton>(R.id.login_button)
+        loginButton.setReadPermissions("email")
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.title = "Pudu"
@@ -47,9 +84,26 @@ class ShareActivity : AppCompatActivity() {
         ivFoto = findViewById(R.id.ivFoto)
 
         bTomar.setOnClickListener{
-            dispararIntentTomarFoto()
             pedirPermisos()
         }
+
+        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
+            override fun onSuccess(loginResult: LoginResult?) {
+                var accessToken = AccessToken.getCurrentAccessToken()
+                var isLoggedIn = accessToken != null && !accessToken!!.isExpired
+                Log.d("ACCESS-TOKEN", accessToken.token)
+            }
+
+            override fun onCancel() {
+                // App code
+            }
+
+            override fun onError(exception: FacebookException) {
+                // App code
+            }
+        })
+
+
     }
     @RequiresApi(Build.VERSION_CODES.M)
     fun pedirPermisos(){
@@ -107,6 +161,9 @@ class ShareActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
+        callbackManager?.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(requestCode, resultCode, data)
+
         when(requestCode){
             SOLICITUD_TOMAR_FOTO->{
                 if(resultCode == Activity.RESULT_OK){
@@ -116,6 +173,7 @@ class ShareActivity : AppCompatActivity() {
                     /*val extras = data?.extras
                     val imageBitmap = extras?.get("data") as Bitmap
                     */
+
 
                     val uri = Uri.parse(urlFotoActual)
                     val stream = contentResolver.openInputStream(uri)
@@ -127,7 +185,12 @@ class ShareActivity : AppCompatActivity() {
                     //canceló la captura
                 }
             }
+
         }
+
+
+
+
     }
 
     fun crearArchivoImagen(): File{
@@ -143,7 +206,6 @@ class ShareActivity : AppCompatActivity() {
     }
 
 
-
     fun añadirImagenGaleria() {
         Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE).also { mediaScanIntent ->
             val f = File(urlFotoActual)
@@ -151,4 +213,5 @@ class ShareActivity : AppCompatActivity() {
             sendBroadcast(mediaScanIntent)
         }
     }
+
 }

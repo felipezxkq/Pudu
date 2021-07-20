@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_search.*
 
 class SearchActivity : AppCompatActivity() {
 
-    private var callbackManager:CallbackManager? = null
+    //private var callbackManager:CallbackManager? = null
     private lateinit var binding:ActivitySearchBinding
 
     private var searchList: List<SearchModel> = ArrayList()
@@ -81,19 +81,16 @@ class SearchActivity : AppCompatActivity() {
 
             startActivity(Intent.createChooser(intent, "Please select app: "))
         }
-*/
 
         callbackManager = CallbackManager.Factory.create();
 
         val loginButton = findViewById<LoginButton>(R.id.login_button)
         loginButton.setReadPermissions("email")
-        // If using in a fragment
+
+
         // If using in a fragment
         //loginButton.setFragment(this)
 
-        // Callback registration
-
-        // Callback registration
         loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
             override fun onSuccess(loginResult: LoginResult?) {
                 var accessToken = AccessToken.getCurrentAccessToken()
@@ -109,6 +106,7 @@ class SearchActivity : AppCompatActivity() {
                 // App code
             }
         })
+*/
     }
 
     private fun searchInFirestore(searchText: String) {
@@ -147,8 +145,8 @@ class SearchActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
 
-        callbackManager?.onActivityResult(requestCode, resultCode, data)
-        super.onActivityResult(requestCode, resultCode, data)
+        //callbackManager?.onActivityResult(requestCode, resultCode, data)
+        //super.onActivityResult(requestCode, resultCode, data)
 
     }
 

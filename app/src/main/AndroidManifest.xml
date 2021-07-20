@@ -6,22 +6,23 @@
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name="com.pudu.pudu2.ShareActivity"></activity>
-        <activity android:name="com.pudu.pudu2.ProductActivity" />
-        <activity android:name="com.pudu.pudu2.view.SplashActivity">
+        <activity android:name=".view.A"></activity>
+        <activity android:name=".ShareActivity" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,9 +30,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.pudu.pudu2.MainActivity"
-            android:parentActivityName="com.pudu.pudu2.SearchActivity" />
-        <activity android:name="com.pudu.pudu2.SearchActivity" />
+            android:name=".MainActivity"
+            android:parentActivityName=".SearchActivity" />
+        <activity android:name=".SearchActivity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
@@ -50,7 +51,6 @@
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider{1928706343954327}"
             android:exported="true" />
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.pudu.pudu2"
@@ -60,8 +60,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-
     </application>
 
 </manifest>
