@@ -35,7 +35,7 @@ class AddProductsActivity : AppCompatActivity() {
         val code = intent.getStringExtra("code")
 
         fun saveFireStore(){
-            val productName = findViewById<TextView>(R.id.editTextProductName)
+            val productName = findViewById<TextView>(R.id.textEditProductName)
             val productNameText = productName.text.toString()
             val db = FirebaseFirestore.getInstance()
             var product = hashMapOf(

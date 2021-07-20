@@ -1,6 +1,7 @@
 package com.pudu.pudu2
 
 import android.content.ContentValues.TAG
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pudu.pudu2.databinding.ActivitySearchBinding
@@ -174,13 +176,27 @@ class SearchActivity : AppCompatActivity() {
 
                 }
                 else{
-                    val intent = Intent(this,AddProductsActivity::class.java)
-                    startActivity(intent)
+                    val alertDialog = AlertDialog.Builder(this)
+                    alertDialog.setTitle("Product not found")
+                    alertDialog.setMessage("Would you like to contribute by adding this product data?")
+                        .setPositiveButton("Yes", DialogInterface.OnClickListener{
+                            dialog, id -> goToAddProduct(code)
+                        })
+                        .setNegativeButton("No", DialogInterface.OnClickListener{
+                                dialog, id -> dialog.cancel()
+                        })
+                    alertDialog.show()
                 }
 
             }
             .addOnFailureListener { exception ->
             }
+    }
+
+    private fun goToAddProduct(code: String){
+        val intent = Intent(this,AddProductsActivity::class.java)
+        intent.putExtra("code",code)
+        startActivity(intent)
     }
 
 }

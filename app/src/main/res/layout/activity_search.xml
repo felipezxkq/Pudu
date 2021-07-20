@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTintMode="src_atop"
+    android:background="@color/puduWhite"
     android:orientation="vertical"
     tools:context=".SearchActivity">
 
@@ -75,7 +76,7 @@
         android:layout_height="61dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/button_soft_borders"
-        android:backgroundTint="@color/puduLightGreen"
+        android:backgroundTint="@color/puduMidGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_white_home_svgrepo_com" />
