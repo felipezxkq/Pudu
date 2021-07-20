@@ -47,6 +47,7 @@ class ShareActivity : AppCompatActivity() {
     var ivFoto:ImageView? = null
 
     var urlFotoActual = ""
+    var imageBitmap:Bitmap? = null
 
 
     private var callbackManager: CallbackManager? = null
@@ -63,13 +64,13 @@ class ShareActivity : AppCompatActivity() {
 
             var hashtag = ShareHashtag.Builder().setHashtag("#Pudu").build()
 
+            var photo = SharePhoto.Builder()
+                .setBitmap(imageBitmap)
+                .build()
 
-            var sharecontent = ShareLinkContent.Builder()
-                .setContentUrl(Uri.parse("https://es.wikipedia.org/wiki/Pudu"))
-                .setQuote("Pudus are in danger.")
-                .setShareHashtag(hashtag)
-                .build();
+            var sharecontent = SharePhotoContent.Builder().addPhoto(photo).build()
             ShareDialog.show(this@ShareActivity, sharecontent)
+
         }
 
 
@@ -177,7 +178,7 @@ class ShareActivity : AppCompatActivity() {
 
                     val uri = Uri.parse(urlFotoActual)
                     val stream = contentResolver.openInputStream(uri)
-                    val imageBitmap = BitmapFactory.decodeStream(stream)
+                    imageBitmap = BitmapFactory.decodeStream(stream)
                     ivFoto!!.setImageBitmap(imageBitmap)
                     añadirImagenGaleria()
 

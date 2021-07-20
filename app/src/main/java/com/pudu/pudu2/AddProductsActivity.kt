@@ -15,14 +15,14 @@ import com.pudu.pudu2.view.IngredientAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 
-class MainActivity : AppCompatActivity() {
+class AddProductsActivity : AppCompatActivity() {
     private lateinit var addsBtn:FloatingActionButton
     private lateinit var recv:RecyclerView
     private lateinit var ingredientsList:ArrayList<IngredientData>
     private lateinit var ingredientAdapter:IngredientAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_add_products)
 
         addsBtn = findViewById(R.id.addingBtn)
         recv = findViewById(R.id.ingredientsRecycler)
@@ -32,19 +32,20 @@ class MainActivity : AppCompatActivity() {
         recv.adapter = ingredientAdapter
         addsBtn.setOnClickListener{ addIngredient() }
 
-
-
+        val code = intent.getStringExtra("code")
 
         fun saveFireStore(){
             val productName = findViewById<TextView>(R.id.editTextProductName)
             val productNameText = productName.text.toString()
             val db = FirebaseFirestore.getInstance()
-            var product: MutableMap<String, Any> = HashMap()
-            product["productName"] = productNameText
-            db.collection("Product").add(product).addOnSuccessListener {
-                Toast.makeText(this@MainActivity, "Record added successfully", Toast.LENGTH_SHORT).show()
+            var product = hashMapOf(
+                "product_name" to productNameText,
+                "code" to code
+            )
+            db.collection("Products").add(product).addOnSuccessListener {
+                Toast.makeText(this@AddProductsActivity, "Record added successfully", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener{
-                Toast.makeText(this@MainActivity, "Record failed to add", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@AddProductsActivity, "Record failed to add", Toast.LENGTH_SHORT).show()
             }
 
         }

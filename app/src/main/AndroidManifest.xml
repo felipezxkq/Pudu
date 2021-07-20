@@ -24,16 +24,18 @@
         <activity android:name=".ShareActivity" />
         <activity android:name=".ProductActivity" />
         <activity android:name=".view.SplashActivity">
+        </activity>
+        <activity
+            android:name=".AddProductsActivity"
+            android:parentActivityName=".SearchActivity" />
+
+        <activity android:name=".SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".SearchActivity" />
-        <activity android:name=".SearchActivity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"

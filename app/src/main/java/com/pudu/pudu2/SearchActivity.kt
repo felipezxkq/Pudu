@@ -155,7 +155,7 @@ class SearchActivity : AppCompatActivity() {
         var productsRef = db.collection("Products");
         var query = productsRef.whereEqualTo("code", code).get()
             .addOnSuccessListener { documents ->
-                if(documents.first() != null){
+                if(!documents.isEmpty()){
                     val product_data = documents.first()
                     val intent = Intent(this, ProductActivity::class.java)
                     val list = listOf("product_name", "serving_size", "ingredients_text", "energy-kcal_100g", "fat_100g", "proteins_100g", "sugar_100g",
@@ -174,6 +174,8 @@ class SearchActivity : AppCompatActivity() {
 
                 }
                 else{
+                    val intent = Intent(this,AddProductsActivity::class.java)
+                    startActivity(intent)
                 }
 
             }

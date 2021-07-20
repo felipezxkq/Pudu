@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        tools:context=".ProductActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/Theme.AppCompat.Light"
+            app:titleTextColor="@color/design_default_color_on_primary" />
+
+        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register product"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center">
+
+        </EditText>
+
+        <!-- Product name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product name: "
+                android:textSize="16dp"
+                >
+
+            </EditText>
+            <EditText
+                android:id="@+id/textEditProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Mandatory"
+                android:textColorHint="@color/puduRed"
+                android:textSize="16dp"
+                >
+            </EditText>
+        </LinearLayout>
+
+
+        <!-- Serving size -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Serving size:     "
+                android:textSize="16dp"
+                >
+
+            </EditText>
+            <EditText
+                android:id="@+id/textServingSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="Mandatory"
+                android:textColorHint="@color/puduRed"
+                >
+            </EditText>
+
+            <EditText
+                android:id="@+id/textServingType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="ex. Cups"
+                >
+            </EditText>
+        </LinearLayout>
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Nutritional information"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            >
+        </EditText>
+
+        <LinearLayout
+            android:id="@+id/nutritional_info"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <!-- Calories -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories: "
+                    android:textSize="16dp"
+                    >
+
+                </EditText>
+                <EditText
+                    android:id="@+id/textCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Mandatory"
+                    android:textColorHint="@color/puduRed"
+                    android:textSize="16dp"
+                    >
+                </EditText>
+            </LinearLayout>
+
+            <!-- Proteins -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proteins: "
+                    android:textSize="16dp"
+                    >
+
+                </EditText>
+                <EditText
+                    android:id="@+id/textProtein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Mandatory"
+                    >
+                </EditText>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/textFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Fat: "
+                android:layout_marginTop="2dp"
+                >
+            </EditText>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Ingredients"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            >
+        </EditText>
+
+        <RelativeLayout
+            android:layout_width="409dp"
+            android:layout_height="265dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingredientsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addingBtn"
+                android:src="@drawable/ic_add"
+                app:tint="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/textIngredientsList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text=""
+            android:layout_marginTop="2dp"
+            >
+        </EditText>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Health and environment"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            >
+        </EditText>
+
+        <EditText
+            android:id="@+id/novaGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Level of processing (Nova score): "
+            android:layout_marginTop="2dp"
+            >
+        </EditText>
+        <EditText
+            android:id="@+id/nutraScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Nutriscore: "
+            android:layout_marginTop="2dp"
+            >
+        </EditText>
+        <EditText
+            android:id="@+id/carbonFootprint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Average carbon footprint for this type of product: "
+            android:layout_marginTop="2dp"
+            >
+        </EditText>
+
+    </LinearLayout>
+</ScrollView>
