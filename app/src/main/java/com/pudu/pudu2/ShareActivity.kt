@@ -67,6 +67,7 @@ class ShareActivity : AppCompatActivity() {
             var photo = SharePhoto.Builder()
                 .setBitmap(imageBitmap)
                 .build()
+            
 
             var sharecontent = SharePhotoContent.Builder().addPhoto(photo).build()
             ShareDialog.show(this@ShareActivity, sharecontent)

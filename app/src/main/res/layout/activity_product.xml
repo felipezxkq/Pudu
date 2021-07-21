@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -22,7 +22,7 @@
         app:popupTheme="@style/Theme.AppCompat.Light"
         app:titleTextColor="@color/design_default_color_on_primary" />
 
-    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/textProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,28 +31,30 @@
         android:textStyle="bold"
         android:layout_gravity="center">
 
-    </EditText>
+    </TextView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Serving size: "
             android:textSize="18dp"
             >
 
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/textServingSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18dp"
             >
-        </EditText>
+        </TextView>
+
+
     </LinearLayout>
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -61,14 +63,14 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         >
-    </EditText>
+    </TextView>
     <LinearLayout
         android:id="@+id/nutritional_info"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <EditText
+        <TextView
             android:id="@+id/textCalories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,8 +78,8 @@
             android:text="Calories: "
             android:layout_marginTop="2dp"
             >
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/textProtein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,8 +87,8 @@
             android:text="Protein: "
             android:layout_marginTop="2dp"
             >
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/textCaffeine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,8 +96,8 @@
             android:text="Caffeine: "
             android:layout_marginTop="2dp"
             >
-        </EditText>
-        <EditText
+        </TextView>
+        <TextView
             android:id="@+id/textFat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,11 +105,11 @@
             android:text="Fat: "
             android:layout_marginTop="2dp"
             >
-        </EditText>
+        </TextView>
 
     </LinearLayout>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -116,9 +118,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         >
-    </EditText>
+    </TextView>
 
-    <EditText
+    <TextView
         android:id="@+id/textIngredientsList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,9 +128,9 @@
         android:text=""
         android:layout_marginTop="2dp"
         >
-    </EditText>
+    </TextView>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -137,9 +139,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         >
-    </EditText>
+    </TextView>
 
-    <EditText
+    <TextView
         android:id="@+id/novaGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -147,8 +149,8 @@
         android:text="Level of processing (Nova score): "
         android:layout_marginTop="2dp"
         >
-    </EditText>
-    <EditText
+    </TextView>
+    <TextView
         android:id="@+id/nutraScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -156,8 +158,8 @@
         android:text="Nutriscore: "
         android:layout_marginTop="2dp"
         >
-    </EditText>
-    <EditText
+    </TextView>
+    <TextView
         android:id="@+id/carbonFootprint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -165,7 +167,7 @@
         android:text="Average carbon footprint for this type of product: "
         android:layout_marginTop="2dp"
         >
-    </EditText>
+    </TextView>
 
 </LinearLayout>
 </ScrollView>

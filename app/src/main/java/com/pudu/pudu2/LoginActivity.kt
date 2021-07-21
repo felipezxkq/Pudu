@@ -25,6 +25,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.oAuthCredential
@@ -36,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
     private var callbackManager: CallbackManager? = null
     private val GOOGLE_SIGN_IN = 100
+    private lateinit var skipBtn:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,20 +46,34 @@ class LoginActivity : AppCompatActivity() {
         setup()
         session()
 
-
-
+        skipBtn = findViewById<Button>(R.id.buttonSkip)
+        skipBtn.setOnClickListener{ goToSearch() }
 
         //########FACEBOOK LOGIN###########
         callbackManager = CallbackManager.Factory.create();
-        val loginButton = findViewById<LoginButton>(R.id.login_button)
-        loginButton.setReadPermissions("email")
+        val facebookButton = findViewById<LoginButton>(R.id.login_button)
+        facebookButton.setReadPermissions("email")
 
 
-        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
+        facebookButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
             override fun onSuccess(loginResult: LoginResult?) {
-                var accessToken = AccessToken.getCurrentAccessToken()
-                var isLoggedIn = accessToken != null && !accessToken!!.isExpired
-                Log.d("ACCESS-TOKEN", accessToken.token)
+
+                loginResult?.let {
+                    val token: AccessToken = it.accessToken
+
+
+                    val credential: AuthCredential = FacebookAuthProvider.getCredential(token.token)
+
+                    FirebaseAuth.getInstance()
+                        .signInWithCredential(credential).addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                showHome(it.result?.user?.email ?: "", ProviderType.FACEBOOK)
+
+                            } else {
+                                showAlert()
+                            }
+                        }
+                }
             }
 
             override fun onCancel() {
@@ -65,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onError(exception: FacebookException) {
-                // App code
+                showAlert()
             }
         })
         //#######FACEBOOK LOGIN END##########
@@ -188,5 +204,10 @@ class LoginActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun goToSearch(){
+        val intent = Intent(this,SearchActivity::class.java)
+        startActivity(intent)
     }
 }

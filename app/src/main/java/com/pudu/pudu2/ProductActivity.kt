@@ -6,19 +6,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_product.*
 
 
 class ProductActivity : AppCompatActivity() {
-    private lateinit var productNameText: EditText
-    private lateinit var servingSizeText: EditText
-    private lateinit var caloriesText: EditText
-    private lateinit var proteinText: EditText
-    private lateinit var caffeineText: EditText
-    private lateinit var fatText: EditText
-    private lateinit var ingredientsListText: EditText
+    private lateinit var productNameText: TextView
+    private lateinit var servingSizeText: TextView
+    private lateinit var caloriesText: TextView
+    private lateinit var proteinText: TextView
+    private lateinit var caffeineText: TextView
+    private lateinit var fatText: TextView
+    private lateinit var ingredientsListText: TextView
     var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,35 +31,35 @@ class ProductActivity : AppCompatActivity() {
 
 
 
-        productNameText = findViewById<EditText>(R.id.textProductName)
+        productNameText = findViewById<TextView>(R.id.textProductName)
         productNameText.setText(intent.getStringExtra("product_name"))
 
-        servingSizeText = findViewById<EditText>(R.id.textServingSize)
+        servingSizeText = findViewById<TextView>(R.id.textServingSize)
         servingSizeText.setText(intent.getStringExtra("serving_size"))
 
-        caloriesText = findViewById<EditText>(R.id.textCalories)
+        caloriesText = findViewById<TextView>(R.id.textCalories)
         if(intent.getStringExtra("energy-kcal_100g") != null){
             caloriesText.setText("Calories: "+intent.getStringExtra("energy-kcal_100g") + "kcal")
         }else{
 
         }
 
-        proteinText = findViewById<EditText>(R.id.textProtein)
+        proteinText = findViewById<TextView>(R.id.textProtein)
         if(intent.getStringExtra("proteins_100g") != null){
             proteinText.setText("Proteins: "+intent.getStringExtra("proteins_100g") + "g")
         }
 
-        caffeineText = findViewById<EditText>(R.id.textCaffeine)
+        caffeineText = findViewById<TextView>(R.id.textCaffeine)
         if(intent.getStringExtra("caffeine_100g") != null){
             caffeineText.setText("Caffeine: "+intent.getStringExtra("caffeine_100g")+ "g")
         }
 
-        fatText = findViewById<EditText>(R.id.textFat)
+        fatText = findViewById<TextView>(R.id.textFat)
         if(intent.getStringExtra("sodium_100g") != null){
             fatText.setText("Sodium: "+intent.getStringExtra("sodium_100g")+ "g")
         }
 
-        ingredientsListText = findViewById<EditText>(R.id.textIngredientsList)
+        ingredientsListText = findViewById<TextView>(R.id.textIngredientsList)
         if(intent.getStringExtra("ingredients_text")!= null){
             ingredientsListText.setText(intent.getStringExtra("ingredients_text"))
         }

@@ -7,13 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.widget.Button
+import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.oAuthProvider
 import kotlinx.android.synthetic.main.activity_home.*
 
 enum class ProviderType {
     BASIC,
-    GOOGLE
+    GOOGLE,
+    FACEBOOK
 }
 
 class HomeActivity : AppCompatActivity() {
@@ -45,17 +47,25 @@ class HomeActivity : AppCompatActivity() {
 
         val logOutButton = findViewById<Button>(R.id.logOutButton)
         logOutButton.setOnClickListener{
+
+
+            val prefs: SharedPreferences.Editor = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+            prefs.clear()
+            prefs.apply()
+
+            if(provider == ProviderType.FACEBOOK.name){
+                LoginManager.getInstance().logOut()
+            }
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
+
         }
 
         searchButton.setOnClickListener{
             val intent = Intent(applicationContext, SearchActivity::class.java).apply {}
             startActivity(intent)
 
-            val prefs: SharedPreferences.Editor = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
-            prefs.clear()
-            prefs.apply()
+
         }
     }
 }
