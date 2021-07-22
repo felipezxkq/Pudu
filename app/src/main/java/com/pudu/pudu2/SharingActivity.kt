@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +25,7 @@ class SharingActivity : AppCompatActivity() {
     var imagePicker: ImageView? = null
     var toolbar: Toolbar? = null
 
-
+    private lateinit var texto: TextView
 
 
 
@@ -32,6 +33,9 @@ class SharingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sharing)
+
+        texto = findViewById(R.id.textView123)
+        texto.setText(intent.getStringExtra("product_name"))
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.title = "Pudu"

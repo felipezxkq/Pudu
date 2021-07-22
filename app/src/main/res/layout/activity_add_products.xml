@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,6 +22,14 @@
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/Theme.AppCompat.Light"
             app:titleTextColor="@color/design_default_color_on_primary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:paddingHorizontal="10dp"
+            tools:context=".ProductActivity">
 
         <EditText xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
@@ -308,7 +318,7 @@
 
                 </TextView>
                 <EditText
-                    android:id="@+id/omega6text"
+                    android:id="@+id/textOmega6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
@@ -333,7 +343,7 @@
 
                 </TextView>
                 <EditText
-                    android:id="@+id/omaga9text"
+                    android:id="@+id/textOmega9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
@@ -849,7 +859,7 @@
 
                 </TextView>
                 <EditText
-                    android:id="@+id/textManganesse"
+                    android:id="@+id/textManganese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="numberSigned"
@@ -1015,5 +1025,9 @@
 
         </Button>
 
+
+
+
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>

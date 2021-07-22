@@ -20,9 +20,13 @@ class AddProductsActivity : AppCompatActivity() {
     private lateinit var recv:RecyclerView
     private lateinit var ingredientsList:ArrayList<IngredientData>
     private lateinit var ingredientAdapter:IngredientAdapter
+    private lateinit var product_data: MutableList<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_products)
+
+
 
         addsBtn = findViewById(R.id.addingBtn)
         recv = findViewById(R.id.ingredientsRecycler)
@@ -31,6 +35,7 @@ class AddProductsActivity : AppCompatActivity() {
         recv.layoutManager = LinearLayoutManager(this)
         recv.adapter = ingredientAdapter
         addsBtn.setOnClickListener{ addIngredient() }
+        product_data = mutableListOf()
 
         val code = intent.getStringExtra("code")
 
@@ -42,6 +47,7 @@ class AddProductsActivity : AppCompatActivity() {
                 "product_name" to productNameText,
                 "code" to code
             )
+
             db.collection("Products").add(product).addOnSuccessListener {
                 Toast.makeText(this@AddProductsActivity, "Record added successfully", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener{
@@ -50,13 +56,66 @@ class AddProductsActivity : AppCompatActivity() {
 
         }
 
+        // Gets all product data from text inputs
+        fun getProductData() {
+            val texts_and_data = listOf(
+                listOf("textEditProductName", "product_name"),
+                listOf("textServingSize", "serving_size"),
+                listOf("textCalories", "calories"),
+                listOf("textProteins", "proteins"),
+                listOf("textTotalFat", "total_fat"),
+                listOf("textPolyunsaturatedFat", "polyunsaturated_fat"),
+                listOf("textMonoUnsaturatedFat", "monounsaturated_fat"),
+                listOf("textCholesterol", "cholesterol"),
+                listOf("textOmega3", "omega_3"),
+                listOf("textOmega6", "omega_6"),
+                listOf("textOmega9", "omega_9"),
+                listOf("textCarbohydrates", "carbohydrates"),
+                listOf("textSugar", "sugar"),
+                listOf("textVitaminA", "vitamin_a"),
+                listOf("textVitaminB1", "vitamin_b1"),
+                listOf("textVitaminB2", "vitamin_b2"),
+                listOf("textVitaminB6", "vitamin_b6"),
+                listOf("textVitaminB9", "vitamin_b9"),
+                listOf("textVitaminB12", "vitamin_b12"),
+                listOf("textBiotin", "biotin"),
+                listOf("vitaminCtext", "vitamin_c"),
+                listOf("textVitaminD", "vitamin_d"),
+                listOf("textVitaminK", "vitamin_k"),
+                listOf("vitaminPPtext", "vitamin_pp"),
+                listOf("textPotassium", "potassium"),
+                listOf("textCalcium", "calcium"),
+                listOf("textPhosphorus", "phosphorus"),
+                listOf("textIron", "iron"),
+                listOf("textMagnesium", "magnesium"),
+                listOf("textZinc", "zinc"),
+                listOf("textCopper", "copper"),
+                listOf("textManganese", "manganese"),
+                listOf("textSelenium", "selenium"),
+                listOf("textChromium", "chromium"),
+                listOf("textMolybdenum", "molybdenum"),
+                listOf("textIodine", "iodine")
+            )
+
+            for (item in texts_and_data) {
+                println("Texto: ")
+                println(item[0])
+                val text =
+                    resources.getString(resources.getIdentifier(item[0], "EditText", packageName))
+                product_data.add(text)
+                println(text)
+            }
+        }
+
         val buttonRegisterProduct =findViewById<Button>(R.id.registerProductButton)
         buttonRegisterProduct.setOnClickListener{
+            getProductData()
             saveFireStore()
         }
+
     }
 
-    private fun addIngredient() {
+    fun addIngredient() {
         val inflater = LayoutInflater.from(this)
         val v = inflater.inflate(R.layout.add_ingredient_item, null)
         val ingredientName = v.findViewById<EditText>(R.id.ingredientName)
@@ -80,6 +139,10 @@ class AddProductsActivity : AppCompatActivity() {
         addDialog.create()
         addDialog.show()
     }
+
+
+
+
 
 
 }

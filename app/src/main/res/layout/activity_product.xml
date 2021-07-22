@@ -22,6 +22,15 @@
         app:popupTheme="@style/Theme.AppCompat.Light"
         app:titleTextColor="@color/design_default_color_on_primary" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:paddingHorizontal="10dp"
+        tools:context=".ProductActivity">
+
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/textProductName"
         android:layout_width="wrap_content"
@@ -30,7 +39,6 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_gravity="center">
-
     </TextView>
     <LinearLayout
         android:layout_width="match_parent"
@@ -169,5 +177,6 @@
         >
     </TextView>
 
+</LinearLayout>
 </LinearLayout>
 </ScrollView>

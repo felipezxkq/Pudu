@@ -86,6 +86,7 @@ class ProductActivity : AppCompatActivity() {
         when(item?.itemId){
             R.id.share->{
                 val intent = Intent(applicationContext, SharingActivity::class.java).apply {}
+                intent.putExtra("product_name", intent.getStringExtra("product_name"))
                 startActivity(intent)
             }
 
