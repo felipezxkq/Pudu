@@ -37,14 +37,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Product name: "
                 android:textSize="16dp"
                 >
 
-            </EditText>
+            </TextView>
             <EditText
                 android:id="@+id/textEditProductName"
                 android:layout_width="wrap_content"
@@ -64,14 +64,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Serving size:     "
                 android:textSize="16dp"
                 >
 
-            </EditText>
+            </TextView>
             <EditText
                 android:id="@+id/textServingSize"
                 android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Calories: "
@@ -126,7 +126,7 @@
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textCalories"
                     android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Proteins (g): "
@@ -153,7 +153,7 @@
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textProteins"
                     android:layout_width="wrap_content"
@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total Fat (g): "
@@ -180,7 +180,7 @@
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textTotalFat"
                     android:layout_width="wrap_content"
@@ -199,14 +199,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Polyunsaturated Fat (g): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textPolyinsaturatedFat"
                     android:layout_width="wrap_content"
@@ -224,14 +224,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Monounsaturated Fat (g): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textMonoUnsaturatedFat"
                     android:layout_width="wrap_content"
@@ -249,14 +249,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cholesterol (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textCholesterol"
                     android:layout_width="wrap_content"
@@ -274,14 +274,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Omega 3 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textOmega3"
                     android:layout_width="wrap_content"
@@ -299,14 +299,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Omega 6 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/omega6text"
                     android:layout_width="wrap_content"
@@ -324,14 +324,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Omega 9 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/omaga9text"
                     android:layout_width="wrap_content"
@@ -349,7 +349,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total carbohydrates (g): "
@@ -357,7 +357,7 @@
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textCarbohydrates"
                     android:layout_width="wrap_content"
@@ -375,14 +375,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sugar (g): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textSugar"
                     android:layout_width="wrap_content"
@@ -400,14 +400,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin A (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminA"
                     android:layout_width="wrap_content"
@@ -425,14 +425,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin B1 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminB1"
                     android:layout_width="wrap_content"
@@ -450,14 +450,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin B2 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminB2"
                     android:layout_width="wrap_content"
@@ -475,14 +475,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin B6 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminB6"
                     android:layout_width="wrap_content"
@@ -500,14 +500,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin B9 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminB9"
                     android:layout_width="wrap_content"
@@ -525,14 +525,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin B12 (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminB12"
                     android:layout_width="wrap_content"
@@ -550,14 +550,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Biotin (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textBiotin"
                     android:layout_width="wrap_content"
@@ -575,14 +575,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin C (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/vitaminCtext"
                     android:layout_width="wrap_content"
@@ -599,14 +599,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin D (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminD"
                     android:layout_width="wrap_content"
@@ -623,14 +623,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin K (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textVitaminK"
                     android:layout_width="wrap_content"
@@ -648,14 +648,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vitamin PP (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/vitaminPPtext"
                     android:layout_width="wrap_content"
@@ -673,14 +673,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Potassium (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textPotassium"
                     android:layout_width="wrap_content"
@@ -697,14 +697,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Calcium (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textCalcium"
                     android:layout_width="wrap_content"
@@ -721,13 +721,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Phosphorus (mg): "
                     android:textSize="16dp"
                     >
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textPhosphorus"
                     android:layout_width="wrap_content"
@@ -744,14 +744,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Iron (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textIron"
                     android:layout_width="wrap_content"
@@ -768,14 +768,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Magnesium (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textMagnesium"
                     android:layout_width="wrap_content"
@@ -792,14 +792,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Zinc (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textZinc"
                     android:layout_width="wrap_content"
@@ -816,14 +816,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Copper (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textCopper"
                     android:layout_width="wrap_content"
@@ -840,14 +840,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Manganesse (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textManganesse"
                     android:layout_width="wrap_content"
@@ -864,14 +864,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Selenium (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textSelenium"
                     android:layout_width="wrap_content"
@@ -888,14 +888,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chromium (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textChromium"
                     android:layout_width="wrap_content"
@@ -912,14 +912,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Molybdenum (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textMolybdenum"
                     android:layout_width="wrap_content"
@@ -936,14 +936,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
-                <EditText
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Iodine (mg): "
                     android:textSize="16dp"
                     >
 
-                </EditText>
+                </TextView>
                 <EditText
                     android:id="@+id/textIodine"
                     android:layout_width="wrap_content"
@@ -957,7 +957,7 @@
 
         </LinearLayout>
 
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -966,7 +966,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             >
-        </EditText>
+        </TextView>
 
         <RelativeLayout
             android:layout_width="409dp"
@@ -996,7 +996,7 @@
 
         </RelativeLayout>
 
-        <EditText
+        <TextView
             android:id="@+id/textIngredientsList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1004,7 +1004,7 @@
             android:text=""
             android:layout_marginTop="2dp"
             >
-        </EditText>
+        </TextView>
 
         <Button
             android:id="@+id/registerProductButton"

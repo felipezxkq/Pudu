@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -67,7 +68,6 @@ class ShareActivity : AppCompatActivity() {
             var photo = SharePhoto.Builder()
                 .setBitmap(imageBitmap)
                 .build()
-            
 
             var sharecontent = SharePhotoContent.Builder().addPhoto(photo).build()
             ShareDialog.show(this@ShareActivity, sharecontent)
