@@ -19,7 +19,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".HomeActivity"></activity>
+
+        <activity android:name=".SharingActivity">
+
+        </activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ShareActivity" />
         <activity android:name=".ProductActivity" />
@@ -29,14 +33,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".AddProductsActivity"
             android:parentActivityName=".SearchActivity" />
-
-        <activity android:name=".SearchActivity">
-
-        </activity>
+        <activity android:name=".SearchActivity"></activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"

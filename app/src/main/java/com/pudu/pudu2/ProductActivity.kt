@@ -28,6 +28,7 @@ class ProductActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         toolbar?.title = "Pudu"
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
 
 
 
@@ -84,7 +85,7 @@ class ProductActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId){
             R.id.share->{
-                val intent = Intent(applicationContext, ShareActivity::class.java).apply {}
+                val intent = Intent(applicationContext, SharingActivity::class.java).apply {}
                 startActivity(intent)
             }
 

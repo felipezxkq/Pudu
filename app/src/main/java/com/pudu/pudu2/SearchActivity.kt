@@ -36,6 +36,7 @@ class SearchActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         toolbar?.title = "Pudu"
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
 
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -19,7 +19,9 @@
         android:backgroundTint="@color/puduLightGreen"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/Theme.AppCompat.Light"
-        app:titleTextColor="@color/design_default_color_background" />
+        app:titleTextColor="@color/puduWhite"
+        app:title="Pudu"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_list"
