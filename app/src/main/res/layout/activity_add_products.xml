@@ -176,6 +176,58 @@
 
             </LinearLayout>
 
+            <!-- Sodium -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sodium (g): "
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    >
+
+                </TextView>
+                <EditText
+                    android:id="@+id/textSodium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:textColorHint="@color/puduRed"
+                    android:textSize="16dp"
+                    >
+                </EditText>
+            </LinearLayout>
+
+            <!-- Caffeine -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Caffeine (g): "
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    >
+
+                </TextView>
+                <EditText
+                    android:id="@+id/textCaffeine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:textColorHint="@color/puduRed"
+                    android:textSize="16dp"
+                    >
+                </EditText>
+            </LinearLayout>
+
             <!-- Fat -->
              <LinearLayout
                 android:layout_width="match_parent"

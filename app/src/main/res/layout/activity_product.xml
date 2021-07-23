@@ -78,42 +78,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <TextView
-            android:id="@+id/textCalories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="Calories: "
-            android:layout_marginTop="2dp"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/textProtein"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="Protein: "
-            android:layout_marginTop="2dp"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/textCaffeine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="Caffeine: "
-            android:layout_marginTop="2dp"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/textFat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="Fat: "
-            android:layout_marginTop="2dp"
-            >
-        </TextView>
 
     </LinearLayout>
 
