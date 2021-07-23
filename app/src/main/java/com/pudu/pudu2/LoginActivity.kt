@@ -10,6 +10,8 @@ import android.provider.ContactsContract
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import bolts.Task
@@ -23,6 +25,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FacebookAuthProvider
@@ -36,7 +39,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : AppCompatActivity() {
 
     private var callbackManager: CallbackManager? = null
-    private val GOOGLE_SIGN_IN = 100
     private lateinit var skipBtn:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,13 +56,11 @@ class LoginActivity : AppCompatActivity() {
         val facebookButton = findViewById<LoginButton>(R.id.login_button)
         facebookButton.setReadPermissions("email")
 
-
         facebookButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
             override fun onSuccess(loginResult: LoginResult?) {
 
                 loginResult?.let {
                     val token: AccessToken = it.accessToken
-
 
                     val credential: AuthCredential = FacebookAuthProvider.getCredential(token.token)
 
@@ -75,7 +75,6 @@ class LoginActivity : AppCompatActivity() {
                         }
                 }
             }
-
             override fun onCancel() {
                 // App code
             }
@@ -120,18 +119,6 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
             }
-
-        }
-        googleButton.setOnClickListener{
-            val googleConf: GoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build()
-
-            val googleClient: GoogleSignInClient = GoogleSignIn.getClient(this, googleConf)
-            googleClient.signOut()
-            startActivityForResult(googleClient.signInIntent, GOOGLE_SIGN_IN)
-
         }
 
         loginButton.setOnClickListener{
@@ -166,45 +153,15 @@ class LoginActivity : AppCompatActivity() {
             putExtra("provider", provider.name)
         }
         startActivity(homeIntent)
-
     }
-
-
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         callbackManager?.onActivityResult(requestCode, resultCode, data)
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(requestCode == GOOGLE_SIGN_IN){
-
-            val task: com.google.android.gms.tasks.Task<GoogleSignInAccount>? = GoogleSignIn.getSignedInAccountFromIntent(data)
-
-            try {
-                val account: GoogleSignInAccount? = task!!.getResult(ApiException::class.java)
-                if(account != null){
-
-                    val credential: AuthCredential = GoogleAuthProvider.getCredential(account.idToken, null)
-
-                    FirebaseAuth.getInstance()
-                        .signInWithCredential(credential).addOnCompleteListener{
-                            if(it.isSuccessful){
-                                showHome(account.email ?: "", ProviderType.GOOGLE)
-
-                            }else{
-                                showAlert()
-                            }
-                        }
-                }
-
-            } catch (e: ApiException){
-                showAlert()
-            }
 
         }
-    }
 
     private fun goToSearch(){
         val intent = Intent(this,SearchActivity::class.java)
