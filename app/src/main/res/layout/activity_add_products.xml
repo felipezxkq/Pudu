@@ -31,98 +31,17 @@
             android:paddingHorizontal="10dp"
             tools:context=".ProductActivity">
 
-        <EditText xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Register product"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_gravity="center">
-
-        </EditText>
-
-        <!-- Product name -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-            <TextView
+            <EditText xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Product name: "
-                android:textSize="16dp"
-                >
+                android:text="Register product"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_gravity="center">
 
-            </TextView>
-            <EditText
-                android:id="@+id/textEditProductName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Required"
-                android:textColorHint="@color/puduRed"
-                android:inputType="textPersonName"
-                android:textSize="16dp"
-                >
-            </EditText>
-        </LinearLayout>
-
-
-        <!-- Serving size -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Serving size:     "
-                android:textSize="16dp"
-                >
-
-            </TextView>
-            <EditText
-                android:id="@+id/textServingSize"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:inputType="numberSigned"
-                android:hint="Required"
-                android:textColorHint="@color/puduRed"
-                >
             </EditText>
 
-            <EditText
-                android:id="@+id/textServingType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:hint="ex. Cups"
-                >
-            </EditText>
-        </LinearLayout>
-
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Nutritional information"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            >
-        </EditText>
-
-        <LinearLayout
-            android:id="@+id/nutritional_info"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-            <!-- Calories -->
+            <!-- Product name -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,25 +50,25 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Calories: "
-                    android:textStyle="bold"
+                    android:text="Product name: "
                     android:textSize="16dp"
                     >
 
                 </TextView>
                 <EditText
-                    android:id="@+id/textCalories"
+                    android:id="@+id/textEditProductName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Required"
-                    android:inputType="numberSigned"
                     android:textColorHint="@color/puduRed"
+                    android:inputType="textPersonName"
                     android:textSize="16dp"
                     >
                 </EditText>
             </LinearLayout>
 
-            <!-- Proteins -->
+
+            <!-- Serving size -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,928 +77,1009 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Proteins (g): "
-                    android:textStyle="bold"
+                    android:text="Serving size:     "
                     android:textSize="16dp"
                     >
 
                 </TextView>
                 <EditText
-                    android:id="@+id/textProteins"
+                    android:id="@+id/textServingSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
+                    android:textSize="16dp"
+                    android:inputType="numberDecimal"
+                    android:hint="Required"
                     android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
                     >
                 </EditText>
 
+                <EditText
+                    android:id="@+id/textServingType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:hint="ex. Cups"
+                    >
+                </EditText>
             </LinearLayout>
 
-            <!-- Sodium -->
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Nutritional information"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                >
+            </EditText>
+
             <LinearLayout
+                android:id="@+id/nutritional_info"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sodium (g): "
-                    android:textStyle="bold"
-                    android:textSize="16dp"
-                    >
+                >
 
-                </TextView>
-                <EditText
-                    android:id="@+id/textSodium"
-                    android:layout_width="wrap_content"
+                <!-- Calories -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calories: "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textCalories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Required"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Proteins -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proteins (g): "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textProteins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+
+                </LinearLayout>
+
+                <!-- Sodium -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sodium (g): "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textSodium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Caffeine -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Caffeine (g): "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textCaffeine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Fat -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Fat (g): "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textTotalFat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+
+                </LinearLayout>
+
+                <!-- Polyunsaturated fat  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Polyunsaturated Fat (g): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textPolyinsaturatedFat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Monounsaturated Fat  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monounsaturated Fat (g): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textMonoUnsaturatedFat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Cholesterol  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cholesterol (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textCholesterol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Omega 3  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Omega 3 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textOmega3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Omega 6  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Omega 6 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textOmega6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Omega 9 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Omega 9 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textOmega9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- carbs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total carbohydrates (g): "
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textCarbohydrates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Sugars  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sugar (g): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textSugar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin A  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin A (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin B1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin B1 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminB1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin B2  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin B2 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminB2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin B6  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin B6 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminB6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin B9  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin B9 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminB9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin  B12 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin B12 (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminB12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Biotin   -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Biotin (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textBiotin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin C  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin C (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/vitaminCtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin D  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin D (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin K  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin K (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textVitaminK"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Vitamin  PP -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vitamin PP (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/vitaminPPtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColorHint="@color/puduRed"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Potassium   -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Potassium (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textPotassium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Calcium  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calcium (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textCalcium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- Phosphorus   -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phosphorus (mg): "
+                        android:textSize="16dp"
+                        >
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textPhosphorus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Iron  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Iron (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textIron"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Magnesium  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Magnesium (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textMagnesium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Zinc  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zinc (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textZinc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Copper  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Copper (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textCopper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Manganese  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manganesse (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textManganese"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Selenium  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Selenium (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textSelenium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Chromium  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chromium (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textChromium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Molybdenum  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Molybdenum (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textMolybdenum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+                <!--  Iodine  -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Iodine (mg): "
+                        android:textSize="16dp"
+                        >
+
+                    </TextView>
+                    <EditText
+                        android:id="@+id/textIodine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16dp"
+                        >
+                    </EditText>
+                </LinearLayout>
+
+
             </LinearLayout>
 
-            <!-- Caffeine -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Caffeine (g): "
-                    android:textStyle="bold"
-                    android:textSize="16dp"
-                    >
+                android:textSize="20dp"
+                android:text="Ingredients"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                >
+            </TextView>
 
-                </TextView>
-                <EditText
-                    android:id="@+id/textCaffeine"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="409dp"
+                android:layout_height="265dp"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ingredientsRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <!-- Fat -->
-             <LinearLayout
-                android:layout_width="match_parent"
+                </androidx.recyclerview.widget.RecyclerView>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addingBtn"
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textIngredientsList"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Fat (g): "
-                    android:textStyle="bold"
-                    android:textSize="16dp"
-                    >
+                android:textSize="18dp"
+                android:text=""
+                android:layout_marginTop="2dp"
+                >
+            </TextView>
 
-                </TextView>
-                <EditText
-                    android:id="@+id/textTotalFat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-
-            </LinearLayout>
-
-            <!-- Polyunsaturated fat  -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/registerProductButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Polyunsaturated Fat (g): "
-                    android:textSize="16dp"
-                    >
+                android:text="Registrar producto"
+                android:layout_gravity="center">
 
-                </TextView>
-                <EditText
-                    android:id="@+id/textPolyinsaturatedFat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
+            </Button>
 
-            <!-- Monounsaturated Fat  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Monounsaturated Fat (g): "
-                    android:textSize="16dp"
-                    >
 
-                </TextView>
-                <EditText
-                    android:id="@+id/textMonoUnsaturatedFat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Cholesterol  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cholesterol (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textCholesterol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Omega 3  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Omega 3 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textOmega3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Omega 6  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Omega 6 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textOmega6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Omega 9 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Omega 9 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textOmega9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- carbs -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total carbohydrates (g): "
-                    android:textStyle="bold"
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textCarbohydrates"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Sugars  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sugar (g): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textSugar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin A  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin A (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin B1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin B1 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminB1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin B2  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin B2 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminB2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin B6  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin B6 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminB6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin B9  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin B9 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminB9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin  B12 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin B12 (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminB12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Biotin   -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Biotin (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textBiotin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin C  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin C (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/vitaminCtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin D  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin D (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminD"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin K  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin K (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textVitaminK"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Vitamin  PP -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vitamin PP (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/vitaminPPtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textColorHint="@color/puduRed"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Potassium   -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Potassium (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textPotassium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Calcium  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Calcium (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textCalcium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!-- Phosphorus   -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Phosphorus (mg): "
-                    android:textSize="16dp"
-                    >
-                </TextView>
-                <EditText
-                    android:id="@+id/textPhosphorus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Iron  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Iron (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textIron"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Magnesium  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Magnesium (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textMagnesium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Zinc  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Zinc (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textZinc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Copper  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Copper (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textCopper"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Manganese  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Manganesse (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textManganese"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Selenium  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Selenium (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textSelenium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Chromium  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chromium (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textChromium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Molybdenum  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Molybdenum (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textMolybdenum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
-
-            <!--  Iodine  -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Iodine (mg): "
-                    android:textSize="16dp"
-                    >
-
-                </TextView>
-                <EditText
-                    android:id="@+id/textIodine"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberSigned"
-                    android:textSize="16dp"
-                    >
-                </EditText>
-            </LinearLayout>
 
 
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Ingredients"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            >
-        </TextView>
-
-        <RelativeLayout
-            android:layout_width="409dp"
-            android:layout_height="265dp"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingTop="3dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ingredientsRecycler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </androidx.recyclerview.widget.RecyclerView>
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/addingBtn"
-                android:src="@drawable/ic_add"
-                app:tint="@color/white"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/textIngredientsList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text=""
-            android:layout_marginTop="2dp"
-            >
-        </TextView>
-
-        <Button
-            android:id="@+id/registerProductButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Registrar producto"
-            android:layout_gravity="center">
-
-        </Button>
-
-
-
-
-    </LinearLayout>
     </LinearLayout>
 </ScrollView>

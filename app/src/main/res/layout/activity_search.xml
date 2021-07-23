@@ -42,8 +42,10 @@
         android:layout_marginTop="92dp"
         android:layout_weight="1"
         android:hint="Search here"
+        android:paddingLeft="33dp"
         android:textColorHint="@color/puduOrange"
         android:tooltipText="Search here"
+        android:background="@mipmap/buscador"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
