@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
@@ -20,6 +21,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
 import kotlinx.android.synthetic.main.activity_search.*
+import kotlinx.android.synthetic.main.hudbuttons.*
 
 
 class SearchActivity : AppCompatActivity() {
@@ -40,7 +42,8 @@ class SearchActivity : AppCompatActivity() {
 
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnScanner.setOnClickListener { initScanner() }
+        val btnScanner: ImageButton = findViewById(R.id.btnScanner)
+        btnScanner.setOnClickListener { initScanner() }
 
         /*
         val addProductBtn = findViewById<Button>(R.id.addProductBtn)

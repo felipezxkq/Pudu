@@ -32,22 +32,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnScanner"
-        android:layout_width="96dp"
-        android:layout_height="72dp"
-        android:layout_marginBottom="8dp"
-        android:layout_weight="1"
-        android:background="@drawable/ic_barcode_icon"
-        android:backgroundTint="@color/puduOrange"
-        android:bottomLeftRadius="10dp"
-        android:bottomRightRadius="10dp"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <EditText
         android:id="@+id/textSearch"
@@ -62,26 +47,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_soft_borders"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_baseline_search_24" />
+    <include layout="@layout/hudbuttons"/>
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="150dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_soft_borders"
-        android:backgroundTint="@color/puduMidGreen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_white_home_svgrepo_com" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

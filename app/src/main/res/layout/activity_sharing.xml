@@ -70,8 +70,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="130dp"
+        android:layout_width="398dp"
+        android:layout_height="80dp"
         android:layout_margin="10dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
@@ -98,78 +98,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="150dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_soft_borders"
-        android:backgroundTint="@color/puduMidGreen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_white_home_svgrepo_com" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_soft_borders"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_baseline_search_24" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnScanner2"
-        android:layout_width="96dp"
-        android:layout_height="72dp"
-        android:layout_marginBottom="8dp"
-        android:layout_weight="1"
-        android:background="@drawable/ic_barcode_icon"
-        android:backgroundTint="@color/puduOrange"
-        android:bottomLeftRadius="10dp"
-        android:bottomRightRadius="10dp"
-        android:topLeftRadius="10dp"
-        android:topRightRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="57dp"
-        android:layout_margin="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="1dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btnScanner2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
-
-        <ImageButton
-            android:id="@+id/chatShareBtn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_menu_send" />
-
-        <ImageButton
-            android:id="@+id/facebookShareBtn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/com_facebook_favicon_blue" />
-    </LinearLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+    <include layout="@layout/hudbuttons"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,7 +67,7 @@ class SharingActivity : AppCompatActivity() {
         }
 
 
-
+/*
         val chatShareBtn = findViewById<ImageButton>(R.id.chatShareBtn)
         chatShareBtn.setOnClickListener {
 
@@ -90,7 +90,7 @@ class SharingActivity : AppCompatActivity() {
             val dialog: AlertDialog = builder.create()
             dialog.show()
         }
-
+*/
 
 
     }
