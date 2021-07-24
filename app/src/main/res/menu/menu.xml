@@ -6,5 +6,7 @@
         android:id="@+id/share"
         android:icon="?attr/actionModeShareDrawable"
         android:title="share"
+        android:iconTint="@color/puduWhite"
         app:showAsAction="ifRoom" />
+
 </menu>

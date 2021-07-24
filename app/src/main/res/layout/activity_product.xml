@@ -19,8 +19,8 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/Theme.AppCompat.Light"
-        app:titleTextColor="@color/design_default_color_on_primary" />
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Widget.Actionbar.Title"
+        app:titleTextColor="@color/puduWhite"/>
 
 
     <LinearLayout

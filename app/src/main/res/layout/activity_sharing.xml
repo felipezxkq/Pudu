@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SharingActivity">
+    tools:context=".SharingActivity"
+    android:background="@color/puduWhite">
+
 
 
     <androidx.appcompat.widget.Toolbar
@@ -19,49 +21,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/Theme.AppCompat.Light"
-        app:titleTextColor="@color/design_default_color_background" />
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Widget.Actionbar.Title"
+        app:titleTextColor="@color/puduWhite"></androidx.appcompat.widget.Toolbar>
+
 
     <ImageView
         android:id="@+id/pickerImage"
         android:layout_width="300dp"
-        android:layout_height="215dp"
+        android:layout_height="250dp"
         android:layout_marginTop="112dp"
+        android:background="@mipmap/photopudu"
         android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/puduframe" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/galleryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
-        app:backgroundTint="@color/puduLightBlue"
+        app:backgroundTint="@color/puduOrange"
         app:layout_constraintBottom_toBottomOf="@+id/pickerImage"
         app:layout_constraintEnd_toEndOf="@+id/pickerImage"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
-    <ImageButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/cameraButton"
-        android:layout_width="54dp"
-        android:layout_height="53dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pickerImage"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/puduOrange"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/pickerImage"
+        app:layout_constraintStart_toStartOf="@+id/pickerImage"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <TextView
         android:id="@+id/textView123"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit your share content!"
+
+        android:textColor="@color/puduOrange"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/pickerImage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,11 +83,13 @@
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cameraButton">
+        app:layout_constraintTop_toBottomOf="@+id/pickerImage">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -93,11 +101,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:hint="El teclado me tapa :(" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/puduLightBlue"
+                    android:hint="Share some info :)"
+                    android:textColor="@color/puduOrange"
+                    android:textColorHighlight="@color/puduOrange"
+                    android:textColorHint="@color/puduOrange" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/hudbuttons"/>
+    <include
+        android:id="@+id/include"
+        layout="@layout/hudbuttons" />
+
+    <ImageButton
+        android:id="@+id/chatShareBtn"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="84dp"
+        android:background="@mipmap/chatshare"
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.229" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,6 @@ import kotlinx.android.synthetic.main.hudbuttons.*
 
 class SearchActivity : AppCompatActivity() {
 
-    //private var callbackManager:CallbackManager? = null
     private lateinit var binding:ActivitySearchBinding
 
     private var searchList: List<SearchModel> = ArrayList()
@@ -44,6 +43,15 @@ class SearchActivity : AppCompatActivity() {
         setContentView(binding.root)
         val btnScanner: ImageButton = findViewById(R.id.btnScanner)
         btnScanner.setOnClickListener { initScanner() }
+
+        btnSearch.setOnClickListener{
+
+        }
+
+        btnHome.setOnClickListener{
+            val intent = Intent(applicationContext, HomeActivity::class.java).apply {}
+            startActivity(intent)
+        }
 
         /*
         val addProductBtn = findViewById<Button>(R.id.addProductBtn)
@@ -76,43 +84,7 @@ class SearchActivity : AppCompatActivity() {
         })
 
 
-/*
-        val shareBtn = findViewById<Button>(R.id.shareBtn)
-        shareBtn.setOnClickListener {
 
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            //intent.putExtra(Intent.EXTRA_TEXT, nombreProducto)
-            intent.type = "text/plain"
-
-            startActivity(Intent.createChooser(intent, "Please select app: "))
-        }
-
-        callbackManager = CallbackManager.Factory.create();
-
-        val loginButton = findViewById<LoginButton>(R.id.login_button)
-        loginButton.setReadPermissions("email")
-
-
-        // If using in a fragment
-        //loginButton.setFragment(this)
-
-        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
-            override fun onSuccess(loginResult: LoginResult?) {
-                var accessToken = AccessToken.getCurrentAccessToken()
-                var isLoggedIn = accessToken != null && !accessToken!!.isExpired
-                Log.d("ACCESS-TOKEN", accessToken.token)
-            }
-
-            override fun onCancel() {
-                // App code
-            }
-
-            override fun onError(exception: FacebookException) {
-                // App code
-            }
-        })
-*/
     }
 
     private fun searchInFirestore(searchText: String) {
@@ -130,7 +102,7 @@ class SearchActivity : AppCompatActivity() {
 
     }
 
-    private fun initScanner(){
+    public fun initScanner(){
         val integrator = IntentIntegrator(this)
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
         integrator.setPrompt("Puduuuuu!!!!!")
@@ -151,8 +123,9 @@ class SearchActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
 
-        //callbackManager?.onActivityResult(requestCode, resultCode, data)
-        //super.onActivityResult(requestCode, resultCode, data)
+
+
+
 
     }
 

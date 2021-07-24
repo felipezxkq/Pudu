@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.widget.Button
+import androidx.appcompat.widget.Toolbar
 import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.oAuthProvider
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.hudbuttons.*
 
 enum class ProviderType {
     BASIC,
@@ -18,10 +20,18 @@ enum class ProviderType {
     FACEBOOK
 }
 
+
 class HomeActivity : AppCompatActivity() {
+    var toolbar: Toolbar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.title = "Pudu"
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
 
         //Setup
         val bundle = intent.extras
@@ -59,10 +69,15 @@ class HomeActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        searchButton.setOnClickListener{
+        btnSearch.setOnClickListener{
             val intent = Intent(applicationContext, SearchActivity::class.java).apply {}
             startActivity(intent)
-
         }
+
+        btnScanner.setOnClickListener{
+            val intent = Intent(applicationContext, SearchActivity::class.java).apply {}
+            startActivity(intent)
+        }
+
     }
 }

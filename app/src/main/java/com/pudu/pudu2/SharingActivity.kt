@@ -18,6 +18,7 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_sharing.*
+import kotlinx.android.synthetic.main.hudbuttons.*
 
 
 class SharingActivity : AppCompatActivity() {
@@ -34,13 +35,16 @@ class SharingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sharing)
 
-        texto = findViewById(R.id.textView123)
-        texto.setText(intent.getStringExtra("product_name"))
+        //texto = findViewById(R.id.textView123)
+        //texto.setText(intent.getStringExtra("product_name"))
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.title = "Pudu"
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(true)
+
+
+
 
 
         imagePicker = findViewById<FloatingActionButton>(R.id.pickerImage)
@@ -49,6 +53,21 @@ class SharingActivity : AppCompatActivity() {
         val cameraButton = findViewById<ImageButton>(R.id.cameraButton)
 
         ImagePicker.with(this).saveDir(getExternalFilesDir(Environment.DIRECTORY_PICTURES)!!)
+
+        btnSearch.setOnClickListener{
+            val intent = Intent(applicationContext, SearchActivity::class.java).apply {}
+            startActivity(intent)
+        }
+
+        btnHome.setOnClickListener{
+            val intent = Intent(applicationContext, HomeActivity::class.java).apply {}
+            startActivity(intent)
+        }
+
+        btnScanner.setOnClickListener{
+            val intent = Intent(applicationContext, SearchActivity::class.java).apply {}
+            startActivity(intent)
+        }
 
         galleryButton.setOnClickListener{
 
@@ -67,7 +86,7 @@ class SharingActivity : AppCompatActivity() {
         }
 
 
-/*
+
         val chatShareBtn = findViewById<ImageButton>(R.id.chatShareBtn)
         chatShareBtn.setOnClickListener {
 
@@ -80,7 +99,7 @@ class SharingActivity : AppCompatActivity() {
 
             startActivity(Intent.createChooser(intent, "Please select app: "))
         }
-
+/*
         val facebookShareBtn = findViewById<ImageButton>(R.id.facebookShareBtn)
         facebookShareBtn.setOnClickListener {
             val builder = AlertDialog.Builder(this)
@@ -104,6 +123,8 @@ class SharingActivity : AppCompatActivity() {
         }
 
     }
+
+
 
 
 }

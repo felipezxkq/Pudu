@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="TextAppearance.AppCompat.Widget.Actionbar.Title"  parent="@android:style/TextAppearance">
+
+        <item name="android:fontFamily">@font/quechely_free</item>
+        <item name="android:textSize">36sp</item>
+        
+    </style>
+
+
 </resources>
