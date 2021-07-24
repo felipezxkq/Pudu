@@ -1027,6 +1027,7 @@
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:visibility="gone"
                 >
             </TextView>
 
@@ -1039,7 +1040,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone">
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/ingredientsRecycler"
                     android:layout_width="match_parent"

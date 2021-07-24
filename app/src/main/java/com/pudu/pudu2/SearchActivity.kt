@@ -117,7 +117,7 @@ class SearchActivity : AppCompatActivity() {
 
     private fun searchInFirestore(searchText: String) {
         val db = FirebaseFirestore.getInstance()
-        db.collection("Products").orderBy("product_name")
+        db.collection("Products").orderBy("product_name_lc")
             .startAt(searchText).endAt("$searchText\uf8ff").get().addOnCompleteListener{
                 if(it.isSuccessful){
                     searchList = it.result!!.toObjects(SearchModel::class.java)

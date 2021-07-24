@@ -1,5 +1,6 @@
 package com.pudu.pudu2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -51,6 +52,7 @@ class AddProductsActivity : AppCompatActivity() {
                     product.put(element.key, element.value)
                 }
             }
+            product.put("product_name_lc", productNameText.lowercase())
 
 
             db.collection("Products").add(product).addOnSuccessListener {
@@ -67,6 +69,8 @@ class AddProductsActivity : AppCompatActivity() {
             product_data.put("product_name", data)
 
             data = findViewById<EditText>(R.id.textServingSize).text.toString()
+            val data2:String = findViewById<EditText>(R.id.textServingType).text.toString()
+            data = data + " " + data2
             product_data.put("serving_size", data)
 
             data = findViewById<EditText>(R.id.textCalories).text.toString()
@@ -182,6 +186,9 @@ class AddProductsActivity : AppCompatActivity() {
         buttonRegisterProduct.setOnClickListener{
             getProductData()
             saveFireStore()
+            val intentSearch = Intent(this,SearchActivity::class.java)
+            intentSearch.putExtra("code",code)
+            startActivity(intentSearch)
         }
 
     }
