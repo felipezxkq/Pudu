@@ -39,6 +39,7 @@ class SearchActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(true)
 
+
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val btnScanner: ImageButton = findViewById(R.id.btnScanner)
@@ -146,7 +147,9 @@ class SearchActivity : AppCompatActivity() {
                         "Biotin" to "biotin_100g", "Panthotenic Acid" to "pantothenic_acid_100g","Potassium" to "potassium_100g", "Calcium" to "calcium_100g",
                         "Phosphorus" to "phosphorus_100g", "Iron" to "iron_100g", "Magnesium" to "magnesium_100g", "Zinc" to "zinc_100g",
                         "Copper" to "copper_100g", "Manganese" to "manganese_100g", "Selenium" to "selenium_100g", "Chromium" to "chromium_100g", "Molybdenum" to "molybdenum_100g",
-                         "Iodine" to "iodine_100g","Sodium" to "sodium_100g", "Caffeine" to "caffeine_100g", "Nova group" to "nova_group", "Additives" to "additives_n")
+                         "Iodine" to "iodine_100g","Sodium" to "sodium_100g", "Caffeine" to "caffeine_100g", "Nova group" to "nova_group", "Additives" to "additives_n"
+                    , "produced_per_footprint" to "produced_per_footprint", "Carbon footprint" to "carbon_footprint", "Water usage" to "water_usage", "Land usage" to "land_usage"
+                    , "Comments" to "comments_en")
 
                     val product_serving_map:Map<String, String> = mapOf("Product name" to "product_name", "Serving size" to "serving_size", "Ingredients" to "ingredients_text",
                         "Traces" to "traces","Packaging" to "packaging","Packaging tags" to "packaging_tags",
@@ -158,7 +161,9 @@ class SearchActivity : AppCompatActivity() {
                         "Phosphorus" to "phosphorus", "Iron" to "iron", "Magnesium" to "magnesium", "Zinc" to "zinc","Copper" to "copper", "Manganese" to "manganese",
                         "Selenium" to "selenium", "Chromium" to "chromium", "Molybdenum" to "molybdenum", "Iodine" to "iodine", "Sodium" to "sodium", "Caffeine" to "caffeine",
                         "Total fat" to "total_fat", "Polyunsaturated fat" to "polyunsaturated_fat", "Monounsaturated fat" to "monounsaturated_fat", "Cholesterol" to "cholesterol",
-                        "Omega 3" to "omega_3", "Omega 6" to "omega_6", "Omage 9" to "omega_9", "Biotin" to "biotin")
+                        "Omega 3" to "omega_3", "Omega 6" to "omega_6", "Omega 9" to "omega9", "Biotin" to "biotin", "Poto" to "poto"
+                        , "produced_per_footprint" to "produced_per_footprint", "Carbon footprint (kg of CO2)" to "carbon_footprint", "Water usage (lts)" to "water_usage", "Land usage (m2)" to "land_usage"
+                        , "Comments" to "comments_en")
 
                     if(product_data.contains("energy-kcal_100g") && product_data.getString("energy-kcal_100g") != ""){
                         intent.putExtra("serving_type", "per 100g")

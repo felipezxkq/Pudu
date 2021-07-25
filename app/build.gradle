@@ -13,8 +13,8 @@ android {
         applicationId "com.pudu.pudu2"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 6
-        versionName "1.1.5"
+        versionCode 10
+        versionName "1.1.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

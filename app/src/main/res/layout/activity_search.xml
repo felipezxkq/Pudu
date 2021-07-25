@@ -20,7 +20,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/Theme.AppCompat.Light"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Widget.Actionbar.Title"
-        app:titleTextColor="@color/puduWhite" />
+        app:titleTextColor="@color/puduWhite" >
+
+        <TextView
+            android:id="@+id/textView123"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pudu"
+            android:fontFamily="@font/quechely_free"
+            android:textColor="@color/puduWhite"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/pickerImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    </androidx.appcompat.widget.Toolbar>
 
 
     <androidx.recyclerview.widget.RecyclerView

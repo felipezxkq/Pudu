@@ -21,6 +21,7 @@ class ProductActivity : AppCompatActivity() {
     private lateinit var caffeineText: TextView
     private lateinit var fatText: TextView
     private lateinit var ingredientsListText: TextView
+    private lateinit var perProducedText: TextView
     var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,13 +60,14 @@ class ProductActivity : AppCompatActivity() {
             "Phosphorus" to "phosphorus", "Iron" to "iron", "Magnesium" to "magnesium", "Zinc" to "zinc","Copper" to "copper", "Manganese" to "manganese",
             "Selenium" to "selenium", "Chromium" to "chromium", "Molybdenum" to "molybdenum", "Iodine" to "iodine", "Sodium" to "sodium", "Caffeine" to "caffeine",
             "Total fat" to "total_fat", "Polyunsaturated fat" to "polyunsaturated_fat", "Monounsaturated fat" to "monounsaturated_fat", "Cholesterol" to "cholesterol",
-            "Omega 3" to "omega_3", "Omega 6" to "omega_6", "Omage 9" to "omega_9", "Biotin" to "biotin")
+            "Omega 3" to "omega_3", "Omega 6" to "omega_6", "Omega 9" to "omega_9", "Biotin" to "biotin")
 
+
+        // Nutritional info inflater
         var linearLayout: LinearLayout = findViewById(R.id.nutritional_info)
         val view: View = layoutInflater.inflate(R.layout.product_data_item, null)
         view.findViewById<TextView>(R.id.textKeyItem).setText("hola")
         view.findViewById<TextView>(R.id.textDataItem).setText("hola")
-
 
         if(intent.getStringExtra("serving type") == "per 100g"){
             for(element in product_100g_map){
@@ -87,6 +89,30 @@ class ProductActivity : AppCompatActivity() {
                     view.findViewById<TextView>(R.id.textDataItem).setText(intent.getStringExtra(element.key))
                     linearLayout.addView(view)
                 }
+            }
+        }
+
+
+        perProducedText = findViewById<TextView>(R.id.textServingSize)
+        if(perProducedText != null){
+            perProducedText.setText("(per " + intent.getStringExtra("produced_per_footprint") + " produced)")
+        }
+
+
+        val environment_impact:Map<String, String> = mapOf("Carbon footprint (kg of CO2)" to "carbon_footprint", "Water usage (lts)" to "water_usage", "Land usage (m2)" to "land_usage"
+            , "Comments" to "comments_en")
+        var linearLayoutEnvironment: LinearLayout = findViewById(R.id.environment_impact)
+        val viewEnvironment: View = layoutInflater.inflate(R.layout.product_data_item, null)
+        viewEnvironment.findViewById<TextView>(R.id.textKeyItem).setText("hola")
+        viewEnvironment.findViewById<TextView>(R.id.textDataItem).setText("hola")
+        for(element in environment_impact){
+            println("Dato: ")
+            println(element.key + "     " + intent.getStringExtra(element.key))
+            if(intent.getStringExtra(element.key) != "" && intent.getStringExtra(element.key) != null){
+                val viewEnvironment: View = layoutInflater.inflate(R.layout.product_data_item, null)
+                viewEnvironment.findViewById<TextView>(R.id.textKeyItem).setText(element.key)
+                viewEnvironment.findViewById<TextView>(R.id.textDataItem).setText(intent.getStringExtra(element.key))
+                linearLayoutEnvironment.addView(viewEnvironment)
             }
         }
 

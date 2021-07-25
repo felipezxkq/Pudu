@@ -81,6 +81,7 @@
 
     </LinearLayout>
 
+        <!--
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,45 +102,39 @@
         android:layout_marginTop="2dp"
         >
     </TextView>
+    -->
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Health and environment"
+        android:text="Environment impact"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         >
     </TextView>
+        <TextView
+            android:id="@+id/per_produced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="(per lt produced)"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            >
+        </TextView>
 
-    <TextView
-        android:id="@+id/novaGroup"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/environment_impact"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:text="Level of processing (Nova score): "
-        android:layout_marginTop="2dp"
         >
-    </TextView>
-    <TextView
-        android:id="@+id/nutraScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:text="Nutriscore: "
-        android:layout_marginTop="2dp"
-        >
-    </TextView>
-    <TextView
-        android:id="@+id/carbonFootprint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:text="Average carbon footprint for this type of product: "
-        android:layout_marginTop="2dp"
-        >
-    </TextView>
+    </LinearLayout>
+
+
 
 </LinearLayout>
 </LinearLayout>
