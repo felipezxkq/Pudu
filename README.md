@@ -30,4 +30,4 @@ Users can log their foods, know their macros, vitamins and minerals consumption 
 Currently we have a very small number of products (~1000) registered, and an even smaller number 
 of users. However, using this small dataset we are already trying to get some valuable insights
 
-## 4. Use IBM Food Trust in order to get valuable knowledge on supply chains and distribution 
+## 3. Use IBM Food Trust in order to get valuable knowledge on supply chains and distribution 
