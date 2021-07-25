@@ -6,6 +6,11 @@ nutritional data and health concerns. With our solution, we are developing an ap
 of product environment impact such as CO2 emission, water usage, energy usage and land usage in the making of a product. The goal is that the users can easily compare
 environment impact vs nutritional value in foods, so they themselves can make better choices for the planet.
 
+Separate repositories:
+* [Pudu helpers](https://github.com/felipezxkq/Pudu_helpers)
+
+
+
 # The solution
 ## 1. Users can either search a product or scan its barcode
 
