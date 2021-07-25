@@ -19,7 +19,8 @@ Separate repositories:
 
 ## 2. Nutritional information, environment impact and health concerns are displayed
 
-![Histograma](https://i.imgur.com/3SVD1vb.png?1)
+![Nutritional](https://i.imgur.com/3SVD1vb.png?1)
+![Enviroment](https://i.imgur.com/PSbak5g.jpg?1)
 
 ## 3. Share food nutritional and environment data with others. Make it a social experience!
 
