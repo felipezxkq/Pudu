@@ -41,7 +41,7 @@ of users. However, using this small dataset we are already trying to get some va
 
 ## Pudu video pitch (spanish)
 
-[![](https://www.youtube.com/watch?v=yvB5EgetAxU)
+[![](https://i.imgur.com/k5TpZ3X.jpg)](https://www.youtube.com/watch?v=yvB5EgetAxU)
 
 ## Authors
 
