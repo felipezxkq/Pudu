@@ -6,6 +6,11 @@ nutritional data and health concerns. With our solution, we are developing an ap
 of product environment impact such as CO2 emission, water usage, energy usage and land usage in the making of a product. The goal is that the users can easily compare
 environment impact vs nutritional value in foods, so they themselves can make better choices for the planet.
 
+Separate repositories:
+* [Pudu helpers](https://github.com/felipezxkq/Pudu_helpers)
+
+
+
 # The solution
 ## 1. Users can either search a product or scan its barcode
 
@@ -14,7 +19,8 @@ environment impact vs nutritional value in foods, so they themselves can make be
 
 ## 2. Nutritional information, environment impact and health concerns are displayed
 
-![Histograma](https://i.imgur.com/3SVD1vb.png?1)
+![Nutritional](https://i.imgur.com/3SVD1vb.png?1)
+![Enviroment](https://i.imgur.com/PSbak5g.jpg?1)
 
 ## 3. Share food nutritional and environment data with others. Make it a social experience!
 
@@ -31,3 +37,15 @@ Currently we have a very small number of products (~1000) registered, and an eve
 of users. However, using this small dataset we are already trying to get some valuable insights
 
 ## 3. Use IBM Food Trust in order to get valuable knowledge on supply chains and distribution 
+
+
+## Pudu video pitch (spanish)
+
+[![](https://i.imgur.com/k5TpZ3X.jpg)](https://www.youtube.com/watch?v=yvB5EgetAxU)
+
+## Authors
+
+* Diego Jiménez
+* Cristina Pradenas
+* Gabriel Pradenas
+* Felipe Jiménez
