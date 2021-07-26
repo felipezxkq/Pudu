@@ -93,7 +93,7 @@ class ProductActivity : AppCompatActivity() {
         }
 
 
-        perProducedText = findViewById<TextView>(R.id.textServingSize)
+        perProducedText = findViewById<TextView>(R.id.per_produced)
         if(perProducedText != null){
             perProducedText.setText("(per " + intent.getStringExtra("produced_per_footprint") + " produced)")
         }
