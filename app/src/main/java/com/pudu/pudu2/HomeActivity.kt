@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.oAuthProvider
+import com.ibm.cloud.appconfiguration.android.sdk.AppConfiguration
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.hudbuttons.*
 
@@ -33,6 +34,21 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(true)
 
+
+        //##########IBM APP CONFIGURATION##############
+        val appConfiguration = AppConfiguration.getInstance()
+
+        appConfiguration.init( application,
+            AppConfiguration.REGION_US_SOUTH,
+            "apikey",
+            "guid")
+        //To start the configuration fetching operation, set the collectionId and environmentId in the following way.
+        val collectionId = "airlines-webapp"
+        val environmentId = "dev"
+        appConfiguration.setContext(collectionId, environmentId)
+        //##########IBM APP CONFIGURATION##############
+
+        
         //Setup
         val bundle = intent.extras
         val email = bundle?.getString("email")

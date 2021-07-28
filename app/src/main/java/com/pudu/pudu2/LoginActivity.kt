@@ -32,6 +32,7 @@ import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.oAuthCredential
+import com.ibm.cloud.appconfiguration.android.sdk.AppConfiguration
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_home.logOutButton
 import kotlinx.android.synthetic.main.activity_login.*
@@ -50,6 +51,9 @@ class LoginActivity : AppCompatActivity() {
 
         skipBtn = findViewById<Button>(R.id.buttonSkip)
         skipBtn.setOnClickListener{ goToSearch() }
+
+
+
 
         //########FACEBOOK LOGIN###########
         callbackManager = CallbackManager.Factory.create();
