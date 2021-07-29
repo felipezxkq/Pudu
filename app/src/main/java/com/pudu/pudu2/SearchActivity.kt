@@ -1,27 +1,41 @@
 package com.pudu.pudu2
 
+import android.Manifest
 import android.content.ContentValues.TAG
 import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.media.MediaPlayer
+import android.media.MediaRecorder
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pudu.pudu2.databinding.ActivitySearchBinding
-import com.pudu.pudu2.models.SearchModel
-import com.facebook.*
+import com.arthenica.mobileffmpeg.Config.RETURN_CODE_CANCEL
+import com.arthenica.mobileffmpeg.Config.RETURN_CODE_SUCCESS
+import com.arthenica.mobileffmpeg.FFmpeg
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.zxing.integration.android.IntentIntegrator
-import com.facebook.login.LoginResult
-import com.facebook.login.widget.LoginButton
+import com.ibm.cloud.sdk.core.http.HttpMediaType
+import com.ibm.cloud.sdk.core.security.IamAuthenticator
+import com.ibm.watson.speech_to_text.v1.SpeechToText
+import com.ibm.watson.speech_to_text.v1.model.RecognizeOptions
+import com.pudu.pudu2.databinding.ActivitySearchBinding
+import com.pudu.pudu2.models.SearchModel
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.hudbuttons.*
+import java.io.File
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.concurrent.thread
 
 
 class SearchActivity : AppCompatActivity() {
@@ -32,46 +46,54 @@ class SearchActivity : AppCompatActivity() {
     private val searchListAdapter = SearchListAdapter(searchList)
     var toolbar: Toolbar? = null
 
+    // Audio permissions
+    private val REQUEST_RECORD_AUDIO_PERMISSION = 200
+    private val permissions = arrayOf<String>(Manifest.permission.RECORD_AUDIO)
+    private var audioRecordingPermissionGranted = false
+
+    // Audio stuff
+    private var mediaRecorder: MediaRecorder? = null
+    private var recordedFileName: String? = null
+    private var convertedFileName: String? = null
+    private var mainHandler: Handler? = null
+    private var isRecording = false
+    private var startRecordingButton: Button? = null
+    private val API_KEY = "VRNQcdFO9rLmmFhIsThfLktysyWYcpjIEHNduvtZKTKa"
+    private val URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/5baa5957-dafe-4fac-a238-b80b77097ce1"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         toolbar = findViewById(R.id.toolbar)
         toolbar?.title = "Pudu"
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(true)
 
 
+        // Scanner button
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val btnScanner: ImageButton = findViewById(R.id.btnScanner)
         btnScanner.setOnClickListener { initScanner() }
 
+        // HOME
         btnSearch.setOnClickListener{
-
         }
-
         btnHome.setOnClickListener{
             val intent = Intent(applicationContext, HomeActivity::class.java).apply {}
             startActivity(intent)
         }
 
-        /*
-        val addProductBtn = findViewById<Button>(R.id.addProductBtn)
-        addProductBtn.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        }
-        */
 
+        // Search functionality
         search_list.hasFixedSize()
         search_list.layoutManager = LinearLayoutManager(this)
         search_list.adapter = searchListAdapter
-
         textSearch.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -79,13 +101,114 @@ class SearchActivity : AppCompatActivity() {
                 if(searchText != ""){
                     searchInFirestore(searchText.lowercase())
                 }
-
             }
-
         })
 
+        // Voice to text search
+        mainHandler = Handler()
+        isRecording = false
+        val mediaRecorder = MediaRecorder()
+        requestPermissions(permissions, REQUEST_RECORD_AUDIO_PERMISSION)
+        startRecordingButton = findViewById(R.id.activity_main_recordSpeech);
+        startRecordingButton?.setOnClickListener{
+            if(!isRecording){
+                if(audioRecordingPermissionGranted){
+                    try{
+                        startAudioRecording()
+                    }catch(e:Exception){
+
+                    }
+                }
+            }else{
+                thread(start = true) {
+                    convertSpeech()
+                }
+            }
+        }
+
+    }
+
+    private fun toggleRecording(){
+        isRecording = !isRecording
+        mainHandler!!.post {
+            if (isRecording) {
+                startRecordingButton!!.setBackgroundResource(R.drawable.ic_mic_on)
+            } else {
+                startRecordingButton!!.setBackgroundResource(R.drawable.ic_baseline_mic_off_24)
+            }
+        }
+    }
+
+    private fun startAudioRecording(){
+        toggleRecording()
+        val uuid: String = UUID.randomUUID().toString()
+        recordedFileName = filesDir.path + "/" + uuid + ".3gp"
+        convertedFileName = filesDir.path + "/" + uuid + ".mp3"
+
+        mediaRecorder = MediaRecorder()
+        mediaRecorder!!.setAudioSource(MediaRecorder.AudioSource.MIC)
+        mediaRecorder!!.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+        mediaRecorder!!.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+        mediaRecorder!!.setOutputFile(recordedFileName)
+
+        mediaRecorder!!.prepare()
+        mediaRecorder!!.start()
+    }
+
+    private fun convertSpeech(){
+        toggleRecording()
+        mediaRecorder!!.stop();
+        mediaRecorder!!.reset();
+        mediaRecorder!!.release();
+
+        val rc = FFmpeg.execute(
+            String.format(
+                "-i %s -c:a libmp3lame %s",
+                recordedFileName,
+                convertedFileName
+            )
+        )
+
+        if (rc == RETURN_CODE_SUCCESS) {
+            println("RECORD SUCCESS")
+            //convertedFileName?.let { playRecording(it) };
+            val authenticator: IamAuthenticator = IamAuthenticator(API_KEY)
+            val speechToText: SpeechToText = SpeechToText(authenticator)
+            speechToText.serviceUrl = URL
+
+            val audioFile: File = File(convertedFileName)
 
 
+            val options: RecognizeOptions = RecognizeOptions.Builder()
+                .audio(audioFile)
+                .contentType(HttpMediaType.AUDIO_MP3)
+                .model("en-AU_NarrowbandModel")
+                .build()
+
+
+            val transcript = speechToText.recognize(options).execute().result
+            println("RESULTADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSADASDAS")
+            println(transcript.results.get(0))
+            if(transcript.results.size>0){
+                val result: String = transcript.results.get(0).alternatives.get(0).transcript
+                textSearch.setText(result)
+            }else{
+                Toast.makeText(this, "Please try again", Toast.LENGTH_LONG).show()
+            }
+
+        }else if(rc == RETURN_CODE_CANCEL){
+            // canceled by user
+        }else{
+            // error
+        }
+
+    }
+
+    private fun playRecording(fileName: String){
+        val player = MediaPlayer()
+        player.setDataSource(fileName)
+        player.prepare()
+        player.start()
     }
 
     private fun searchInFirestore(searchText: String) {
@@ -123,11 +246,6 @@ class SearchActivity : AppCompatActivity() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
-
-
-
-
-
     }
 
     private fun returnProducts(code: String){
@@ -201,6 +319,22 @@ class SearchActivity : AppCompatActivity() {
         val intent = Intent(this,AddProductsActivity::class.java)
         intent.putExtra("code",code)
         startActivity(intent)
+    }
+
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String?>,
+        grantResults: IntArray
+        ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            REQUEST_RECORD_AUDIO_PERMISSION -> audioRecordingPermissionGranted =
+                grantResults[0] == PackageManager.PERMISSION_GRANTED
+        }
+        if (!audioRecordingPermissionGranted) {
+            finish()
+        }
     }
 
 }
