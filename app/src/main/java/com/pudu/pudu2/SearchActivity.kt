@@ -9,6 +9,7 @@ import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -193,7 +194,9 @@ class SearchActivity : AppCompatActivity() {
                 val confidence: Double = transcript.results.get(0).alternatives.get(0).confidence
                 val result: String = transcript.results.get(0).alternatives.get(0).transcript
                 if(confidence>0.4){
+                    Looper.prepare()
                     textSearch.setText(result)
+                    Looper.loop()
                 }else{
                     runOnUiThread(Runnable() {
                         run() {
