@@ -57,7 +57,7 @@ class SearchActivity : AppCompatActivity() {
     private var convertedFileName: String? = null
     private var mainHandler: Handler? = null
     private var isRecording = false
-    private var startRecordingButton: Button? = null
+    private var startRecordingButton: ImageButton? = null
     private val API_KEY = "VRNQcdFO9rLmmFhIsThfLktysyWYcpjIEHNduvtZKTKa"
     private val URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/5baa5957-dafe-4fac-a238-b80b77097ce1"
 
@@ -132,9 +132,9 @@ class SearchActivity : AppCompatActivity() {
         isRecording = !isRecording
         mainHandler!!.post {
             if (isRecording) {
-                startRecordingButton!!.setBackgroundResource(R.drawable.ic_mic_on)
+                startRecordingButton!!.setBackgroundResource(R.mipmap.mic_on)
             } else {
-                startRecordingButton!!.setBackgroundResource(R.drawable.ic_baseline_mic_off_24)
+                startRecordingButton!!.setBackgroundResource(R.mipmap.mic_blocked)
             }
         }
     }
@@ -188,12 +188,26 @@ class SearchActivity : AppCompatActivity() {
 
             val transcript = speechToText.recognize(options).execute().result
             println("RESULTADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSADASDAS")
-            println(transcript.results.get(0))
             if(transcript.results.size>0){
+                println(transcript.results.get(0))
+                val confidence: Double = transcript.results.get(0).alternatives.get(0).confidence
                 val result: String = transcript.results.get(0).alternatives.get(0).transcript
-                textSearch.setText(result)
+                if(confidence>0.4){
+                    textSearch.setText(result)
+                }else{
+                    runOnUiThread(Runnable() {
+                        run() {
+                            Toast.makeText(this, "Sorry I didn't understand. Please try again", Toast.LENGTH_LONG).show()
+                        }
+                    })
+                }
+
             }else{
-                Toast.makeText(this, "Please try again", Toast.LENGTH_LONG).show()
+                runOnUiThread(Runnable() {
+                    run() {
+                        Toast.makeText(this, "Did you say something? Please try again", Toast.LENGTH_LONG).show()
+                    }
+                })
             }
 
         }else if(rc == RETURN_CODE_CANCEL){

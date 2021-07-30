@@ -50,30 +50,29 @@
 
     <EditText
         android:id="@+id/textSearch"
-        android:layout_width="326dp"
+        android:layout_width="286dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="92dp"
-        android:elevation="2dp"
         android:hint="Search here"
         android:paddingLeft="33dp"
+        android:paddingRight="33dp"
         android:textColorHint="@color/puduOrange"
         android:tooltipText="Search here"
         android:background="@mipmap/buscador"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:layout_width="50dp"
+    <ImageButton
+        android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="315dp"
+        android:layout_marginStart="318dp"
         android:layout_marginTop="92dp"
-        android:elevation="10dp"
         android:id="@+id/activity_main_recordSpeech"
         android:layout_gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/ic_baseline_mic_off_24"/>
+        android:background="@mipmap/mic_blocked"/>
 
     <include layout="@layout/hudbuttons"/>
 
