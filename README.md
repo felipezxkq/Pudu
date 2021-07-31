@@ -14,12 +14,8 @@
   - [Long description](#long-description)
   - [Project roadmap](#project-roadmap)
   - [Getting started](#getting-started)
-  - [Live demo](#live-demo)
   - [Built with](#built-with)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
   - [Authors](#authors)
-  - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
 ## Short description
@@ -47,113 +43,44 @@ environment impact vs nutritional value in foods, so they themselves can make be
 
 ![Video transcription/translation app](https://i.imgur.com/74PlgqM.png)
 
-1. The user navigates to the site and uploads a video file.
-2. Watson Speech to Text processes the audio and extracts the text.
-3. Watson Translation (optionally) can translate the text to the desired language.
-4. The app stores the translated text as a document within Object Storage.
-5. 
-
-## Long description
-
-[More detail is available here](./docs/DESCRIPTION.md)
+1. Data is added to Firebase through user input and open databases such as OpenFoodFacts.
+2. Data is cleaned and processesed using Python and IBM Watson Studio
+3. The Android application gives user access to the data and all the functionalities.
+4. Users can search products using IBM's Speech to Text.
+5. Users can search products using the scanner or the search bar.
+6. Product information is displayed.
+7. Users can share the product data in social media together with inputs/comments of their own.
+8. Users can track their fitness/environmental goals.
+9. Users can track their diets, log their daily intakes.
 
 ## Project roadmap
 
 The project currently does the following things.
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Users can search or scan barcodes to get nutritional/environmental information.
+- Users can add product data from packages information.
+- Product data is regularly processed and classified.
 
-It's in a free tier IBM Cloud Kubernetes cluster. In the future we plan to run on Red Hat OpenShift, for example.
+Currently we only have an Android application (not released), we plan on having a web application hosted on IBM Cloud.
 
 See below for our proposed schedule on next steps after Call for Code 2021 submission.
 
-![Roadmap](./images/roadmap.jpg)
+![Roadmap](https://i.imgur.com/0wzKLhe.png)
 
 ## Getting started
 
-In this section you add the instructions to run your project on your local machine for development and testing purposes. You can also add instructions on how to deploy the project in production.
+Send us a email to puduapp@gmail.com so we can add you to Android's internal testing.
 
-- [sample-react-app](./sample-react-app/)
-- [sample-angular-app](./sample-angular-app/)
-- [Explore other projects](https://github.com/upkarlidder/ibmhacks)
-
-## Live demo
-
-You can find a running system to test at [callforcode.mybluemix.net](http://callforcode.mybluemix.net/).
 
 ## Built with
 
-- [IBM Cloudant](https://cloud.ibm.com/catalog?search=cloudant#search_results) - The NoSQL database used
-- [IBM Cloud Functions](https://cloud.ibm.com/catalog?search=cloud%20functions#search_results) - The compute platform for handing logic
-- [IBM API Connect](https://cloud.ibm.com/catalog?search=api%20connect#search_results) - The web framework used
-- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency management
-- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- [Firebase](https://firebase.google.com) - The NoSQL database used
+- [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio) - The software platform to make data analisis
+- [Kotlin](https://kotlinlang.org) - The language used for Android development
+- [IBM Watson Speech to Text](https://www.ibm.com/cloud/watson-speech-to-text) - The service used to translate speech to text
+- [Facebook SDK](https://www.ibm.com/cloud/watson-speech-to-text) - SDK used to share through facebook apps
+- [ZXing Android Embedded](https://github.com/journeyapps/zxing-android-embedded) - Barcode scanning library for Android
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-<a href="https://github.com/Call-for-Code/Project-Sample/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=Call-for-Code/Project-Sample" />
-</a>
-
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
-
-## License
-
-This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-
-
-
-
-Separate repositories:
-* [Pudu helpers](https://github.com/felipezxkq/Pudu_helpers)
-
-
-
-# The solution
-## 1. Users can either search a product or scan its barcode
-
-![Search](https://i.imgur.com/PQI7q07.png?2)
-![Scan](https://i.imgur.com/uLBjfZB.png?1)
-
-## 2. Nutritional information, environment impact and health concerns are displayed
-
-![Nutritional](https://i.imgur.com/3SVD1vb.png?1)
-![Enviroment](https://i.imgur.com/PSbak5g.jpg?1)
-
-## 3. Share food nutritional and environment data with others. Make it a social experience!
-
-![Social](https://i.imgur.com/udX7iLk.png?1))
-
-
-# What we are working on
-
-## 1. Daily lists or diets
-Users can log their foods, know their macros, vitamins and minerals consumption while also knowing the environment impact of their diet
-
-## 2. Generating relevant knowledge through IBM's Watson Knowledge Studio
-Currently we have a very small number of products (~1000) registered, and an even smaller number 
-of users. However, using this small dataset we are already trying to get some valuable insights
-
-## 3. Use IBM Food Trust in order to get valuable knowledge on supply chains and distribution 
-
-
-## Pudu video pitch (spanish)
-
-[![](https://i.imgur.com/k5TpZ3X.jpg)](https://www.youtube.com/watch?v=yvB5EgetAxU)
 
 ## Authors
 
@@ -161,3 +88,11 @@ of users. However, using this small dataset we are already trying to get some va
 * Cristina Pradenas
 * Gabriel Pradenas
 * Felipe Jiménez
+
+
+Separate repositories:
+* [Pudu helpers](https://github.com/felipezxkq/Pudu_helpers)
+
+
+
+
