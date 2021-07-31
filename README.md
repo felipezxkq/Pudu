@@ -3,7 +3,7 @@
 
 ## Contents
 
-- [Submission or project name](#submission-or-project-name)
+- [Pudu](#pudu)
   - [Contents](#contents)
   - [Short description](#short-description)
     - [What's the problem?](#whats-the-problem)
@@ -11,11 +11,11 @@
     - [The idea](#the-idea)
   - [Demo video](#demo-video)
   - [The architecture](#the-architecture)
-  - [Long description](#long-description)
   - [Project roadmap](#project-roadmap)
   - [Getting started](#getting-started)
   - [Built with](#built-with)
   - [Authors](#authors)
+  - [Separate repositories](#separate-repositories)
   - [Acknowledgments](#acknowledgments)
 
 ## Short description
@@ -90,8 +90,13 @@ Send us a email to puduapp@gmail.com so we can add you to Android's internal tes
 * Felipe Jiménez
 
 
-Separate repositories:
+## Separate repositories
 * [Pudu helpers](https://github.com/felipezxkq/Pudu_helpers)
+
+
+## Acknowledgments
+
+* OpenFoodFacts: Food products database made by everyone, for everyone.
 
 
 
