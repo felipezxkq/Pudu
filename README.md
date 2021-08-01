@@ -23,11 +23,11 @@
 ### What's the problem?
 
 Food production greenhouse emissions is one of the most important causes of climate change. In order to make the best choices, concious consumers need a tool to get information on food environment impact, nutritional data and health concerns. The Nutritional App Market is growing rapidly, but far from helping the planet it is unexpectedly incetivizing the consumption of foods with higher carbon footprints.
-. 
+
 
 ### How can technology help?
 
-Fitness enthusiasts that want to contribute towards fighting climate change will have access to an easy-to-use platform with nutritional and environmental information to help them make the best choices.
+People who want to contribute towards fighting climate change will have access to an easy-to-use platform with nutritional and environmental information, helping them make better choices.
 
 ### The idea
 
