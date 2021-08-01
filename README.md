@@ -41,7 +41,7 @@ environmental impact vs nutritional value in foods, so they themselves can make 
 
 ## Video Demo Hackathon LATAM
 
-[![](https://i.imgur.com/5pJLQN8.jpg)](https://www.youtube.com/watch?v=_8TJStQ3gyc)
+[![](https://i.imgur.com/A2kQve9.jpg)](https://www.youtube.com/watch?v=_8TJStQ3gyc)
 
 
 ## The architecture
