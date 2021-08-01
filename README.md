@@ -38,7 +38,7 @@ environmental impact vs nutritional value in foods, so they themselves can make 
 
 ## Call for code 2021 video
 
-[![](https://i.imgur.com/k5TpZ3X.jpg)](https://www.youtube.com/watch?v=9ddosvqGiPU)
+[![](https://i.imgur.com/xszh2dK.jpg)](https://www.youtube.com/watch?v=9ddosvqGiPU)
 
 ## Video Demo Hackathon LATAM
 
