@@ -22,7 +22,7 @@
 
 ### What's the problem?
 
-Food production greenhouse emissions is one of the most important causes of climate change. In order to make the best choices, concious consumers need a tool to get information on food environment impact, nutritional data and health concerns. The Nutritional App Market is growing rapidly, but far from helping the planet it is unexpectedly incetivizing the consumption of foods with higher carbon footprints.
+Food production greenhouse emissions is one of the most important causes of climate change. In order to make the best choices, conscious consumers need a tool to get information on food environment impact, nutritional data and health concerns. The Nutritional App Market is growing rapidly, but far from helping the planet it is unexpectedly incentivizing the consumption of foods with higher carbon footprints.
 
 
 ### How can technology help?
@@ -44,8 +44,8 @@ environmental impact vs nutritional value in foods, so they themselves can make 
 ![Architecture](https://i.imgur.com/R881FiS.png)
 
 1. Data is added to Firebase through user input and open databases such as OpenFoodFacts.
-2. Data is cleaned and processesed using Python and IBM Watson Studio
-3. The Android application gives user access to the data and all the functionalities.
+2. Data is cleaned and processed using Python and IBM Watson Studio
+3. The Android application gives users access to the data and all the functionalities.
 4. Users can search products using IBM's Speech to Text.
 5. Users can search products using the scanner or the search bar.
 6. Product information is displayed.
