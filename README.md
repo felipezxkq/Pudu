@@ -41,7 +41,7 @@ environmental impact vs nutritional value in foods, so they themselves can make 
 
 ## The architecture
 
-![Architecture](https://i.imgur.com/EKCX9bC.png)
+![Architecture](https://i.imgur.com/R881FiS.png)
 
 1. Data is added to Firebase through user input and open databases such as OpenFoodFacts.
 2. Data is cleaned and processesed using Python and IBM Watson Studio
@@ -50,7 +50,7 @@ environmental impact vs nutritional value in foods, so they themselves can make 
 5. Users can search products using the scanner or the search bar.
 6. Product information is displayed.
 7. Users can share the product data in social media together with inputs/comments of their own.
-8. Users can track their fitness/environmental goals.
+8. Users can track their fitness and environmental goals.
 9. Users can track their diets, log their daily intakes.
 
 ## Project roadmap
@@ -69,25 +69,25 @@ See below for our proposed schedule on next steps after Call for Code 2021 submi
 
 ## Getting started
 
-Send us a email to puduapp@gmail.com so we can add you to Android's internal testing. If you're reading this in the future, it is likely that you will be able to find the application in the Play Store.
+Send us an email to puduapp@gmail.com so we can add you to Android's internal testing. If you're reading this in the future, it is likely that you will be able to find the application in the Play Store.
 
 
 ## Built with
 
-- [Firebase](https://firebase.google.com) - The NoSQL database used
-- [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio) - The software platform to make data analisis
-- [Kotlin](https://kotlinlang.org) - The language used for Android development
 - [IBM Watson Speech to Text](https://www.ibm.com/cloud/watson-speech-to-text) - The service used to translate speech to text
+- [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio) - The software platform to make data analisis
+- [Firebase](https://firebase.google.com) - The NoSQL database used
+- [Kotlin](https://kotlinlang.org) - The language used for Android development
 - [Facebook SDK](https://www.ibm.com/cloud/watson-speech-to-text) - SDK used to share through facebook apps
 - [ZXing Android Embedded](https://github.com/journeyapps/zxing-android-embedded) - Barcode scanning library for Android
 
 
 ## Authors
 
-* Diego Jiménez
-* Cristina Pradenas
-* Gabriel Pradenas
-* Felipe Jiménez
+* Diego Jiménez (Software Developer) - diegojimenez377@gmail.com
+* Cristina Pradenas (Artist) - crispradjim123@gmail.com
+* Gabriel Pradenas (Artist) - gabriel.pradenas95@gmail.com
+* Felipe Jiménez (Software Developer) - felipe.zxkq@gmail.com
 
 
 ## Separate repositories
@@ -96,7 +96,7 @@ Send us a email to puduapp@gmail.com so we can add you to Android's internal tes
 
 ## Acknowledgments
 
-* OpenFoodFacts: Food products database made by everyone, for everyone.
+* OpenFoodFacts: Food products database made by everyone, for everyone. [Open Food Facts Website](https://world.openfoodfacts.org)
 
 
 
