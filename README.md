@@ -65,7 +65,7 @@ Currently we only have an Android application (not released), we plan on having 
 
 See below for our proposed schedule on next steps after Call for Code 2021 submission.
 
-![Roadmap](https://i.imgur.com/0wzKLhe.png)
+![Roadmap](https://i.imgur.com/O9vcg2t.png)
 
 ## Getting started
 
