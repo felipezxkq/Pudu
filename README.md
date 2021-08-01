@@ -41,7 +41,7 @@ environmental impact vs nutritional value in foods, so they themselves can make 
 
 ## The architecture
 
-![Architecture](https://i.imgur.com/R881FiS.png)
+![Architecture](https://i.imgur.com/FTcJNp1.png)
 
 1. Data is added to Firebase through user input and open databases such as OpenFoodFacts.
 2. Data is cleaned and processed using Python and IBM Watson Studio
