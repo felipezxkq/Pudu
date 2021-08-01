@@ -69,7 +69,7 @@ See below for our proposed schedule on next steps after Call for Code 2021 submi
 
 ## Getting started
 
-Send us a email to puduapp@gmail.com so we can add you to Android's internal testing.
+Send us a email to puduapp@gmail.com so we can add you to Android's internal testing. If you're reading this in the future, it is likely that you will be able to find the application in the Play Store.
 
 
 ## Built with
